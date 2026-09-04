@@ -1350,11 +1350,11 @@
                   <span class="material-symbols-outlined text-[24px] text-[#CCFF00]" id="modal-icon">local_cafe</span>
                 </div>
                 <div class="relative z-10 flex flex-col items-center justify-center my-auto text-center gap-2">
-                  <div
+                  <div id="modal-camera-icon-wrapper"
                     class="w-14 h-14 rounded-full border-2 border-dashed border-white/70 flex items-center justify-center bg-black/50 backdrop-blur-sm">
                     <span class="material-symbols-outlined text-white text-[28px]">photo_camera</span>
                   </div>
-                  <span class="font-mono-tag text-xs text-white/90 font-bold tracking-tight">[ 사진을 등록해주세요 / DROP PHOTO
+                  <span id="modal-placeholder-text" class="font-mono-tag text-xs text-white/90 font-bold tracking-tight">[ 사진을 등록해주세요 / DROP PHOTO
                     ]</span>
                   <h3 class="font-headline-hero text-lg font-black text-[#CCFF00] drop-shadow-md"
                     id="modal-photo-title">심야 독서 모임 현장</h3>
@@ -1741,6 +1741,9 @@
 
               const cardImg = card.querySelector('img');
               let modalImg = modalPhotoBox.querySelector('img.modal-photo-img');
+              const cameraWrapper = document.getElementById('modal-camera-icon-wrapper');
+              const placeholderText = document.getElementById('modal-placeholder-text');
+
               if (cardImg) {
                 if (!modalImg) {
                   modalImg = document.createElement('img');
@@ -1750,8 +1753,12 @@
                 modalImg.src = cardImg.src;
                 modalImg.alt = cardImg.alt;
                 modalImg.style.display = 'block';
-              } else if (modalImg) {
-                modalImg.style.display = 'none';
+                if (cameraWrapper) cameraWrapper.style.display = 'none';
+                if (placeholderText) placeholderText.style.display = 'none';
+              } else {
+                if (modalImg) modalImg.style.display = 'none';
+                if (cameraWrapper) cameraWrapper.style.display = 'flex';
+                if (placeholderText) placeholderText.style.display = 'inline-block';
               }
 
               modal.classList.remove('hidden');
