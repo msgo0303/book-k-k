@@ -1927,32 +1927,10 @@
             window.playBgm = playBgm;
             window.pauseBgm = pauseBgm;
 
-            playBgm();
-
-            function removeInteractionListeners() {
-              window.removeEventListener('click', handleFirstInteraction);
-              window.removeEventListener('touchstart', handleFirstInteraction);
-              window.removeEventListener('keydown', handleFirstInteraction);
-            }
-
-            function handleFirstInteraction() {
-              if (!hasUserInteracted) {
-                hasUserInteracted = true;
-                removeInteractionListeners();
-                if (!isBgmPlaying) playBgm();
-              }
-            }
-
-            window.addEventListener('click', handleFirstInteraction);
-            window.addEventListener('touchstart', handleFirstInteraction);
-            window.addEventListener('keydown', handleFirstInteraction);
-
             if (bgmToggleBtn) {
               bgmToggleBtn.addEventListener('click', function (e) {
                 e.preventDefault();
                 e.stopPropagation();
-                hasUserInteracted = true;
-                removeInteractionListeners();
                 toggleBgm();
               });
             }
@@ -2018,8 +1996,6 @@
               btn.addEventListener('click', function (e) {
                 e.preventDefault();
                 e.stopPropagation();
-                hasUserInteracted = true;
-                removeInteractionListeners();
                 const src = this.getAttribute('data-src') || 'Not a Dream.mp3';
                 toggleMixtape(this, src);
               });
