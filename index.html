@@ -6,6 +6,7 @@
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
     name="viewport">
   <title>북-크-크 아카이브</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
   <link
@@ -198,10 +199,10 @@
     class="relative w-full max-w-[430px] min-h-screen flex flex-col bg-[#F4EFEB] sm:border-x-2 sm:border-black sm:shadow-[0_0_50px_rgba(0,0,0,0.15)]">
     <!-- SPLASH INTRO OVERLAY -->
     <div
-      class="fixed inset-0 sm:absolute sm:inset-0 z-[100] bg-[#F4EFEB] flex flex-col justify-between p-5 select-none overflow-hidden transition-all duration-700 ease-in-out"
+      class="fixed inset-0 z-[200] bg-[#F4EFEB] flex flex-col justify-between items-center p-5 select-none overflow-hidden transition-all duration-700 ease-in-out"
       id="splash-screen">
       <div class="absolute inset-0 bg-halftone opacity-80 pointer-events-none z-0"></div>
-      <div class="relative z-10 flex justify-between items-start pt-3">
+      <div class="relative z-10 w-full max-w-[430px] flex justify-between items-start pt-3">
         <div class="bg-white border-2 border-black px-2 py-1 hard-shadow-sm -rotate-2">
           <div class="flex items-center gap-1 font-mono-tag text-[9px] font-black tracking-widest text-black">
             <span>||||||| | |||| | ||</span>
@@ -216,7 +217,7 @@
         </div>
       </div>
       <div
-        class="relative z-10 my-auto bg-white border-[3.5px] border-black p-5 hard-shadow-lg transition-transform duration-300"
+        class="relative z-10 my-auto w-full max-w-[390px] bg-white border-[3.5px] border-black p-5 hard-shadow-lg transition-transform duration-300"
         id="splash-card">
         <div
           class="absolute -top-3 left-1/2 -translate-x-1/2 w-28 h-5 masking-tape border border-black/30 -rotate-1 text-[8px] font-mono-tag font-bold flex items-center justify-center tracking-tighter">
@@ -1552,7 +1553,7 @@
         <audio id="mixtape-audio" src="Not a Dream.mp3" preload="auto"></audio>
 
         <!-- FLOATING CIRCULAR BGM CONTROLLER WIDGET (FIXED BOTTOM LEFT) -->
-        <div class="fixed bottom-4 left-4 z-[100] hidden items-center" id="bgm-widget">
+        <div class="fixed bottom-4 left-4 sm:left-[calc(50%-200px)] z-[100] hidden items-center" id="bgm-widget">
           <button aria-label="BGM 재생 컨트롤"
             class="w-12 h-12 rounded-full bg-[#CCFF00] text-black border-2 border-black hard-shadow-md flex items-center justify-center relative cursor-pointer active:scale-95 transition-all group"
             id="bgm-toggle-btn" title="BGM 재생/일시정지" type="button">
