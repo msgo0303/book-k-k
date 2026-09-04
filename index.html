@@ -1086,7 +1086,7 @@ SESSION #15
 <audio id="bgm-audio" src="bgm.mp3" loop preload="auto"></audio>
 
 <!-- FLOATING CIRCULAR BGM CONTROLLER WIDGET (FIXED BOTTOM LEFT) -->
-<div class="fixed bottom-4 left-4 z-[100] flex items-center" id="bgm-widget">
+<div class="fixed bottom-4 left-4 z-[100] hidden items-center" id="bgm-widget">
 <button aria-label="BGM 재생 컨트롤" class="w-12 h-12 rounded-full bg-[#CCFF00] text-black border-2 border-black hard-shadow-md flex items-center justify-center relative cursor-pointer active:scale-95 transition-all group" id="bgm-toggle-btn" title="BGM 재생/일시정지" type="button">
 <div class="flex items-end gap-1 h-6" id="bgm-equalizer">
 <span class="w-1 bg-black rounded-full h-1" id="eq-bar-1"></span>
@@ -1099,6 +1099,12 @@ SESSION #15
 </div>
 <script>
     (function() {
+      // Disable scrolling while splash screen is active
+      const splashElem = document.getElementById('splash-screen');
+      if (splashElem && splashElem.style.display !== 'none') {
+        document.body.style.overflow = 'hidden';
+      }
+
       const ctaBtn = document.getElementById('hero-cta-btn');
       if (ctaBtn) {
         ctaBtn.addEventListener('click', function(e) {
@@ -1306,7 +1312,7 @@ SESSION #15
             sticker1.style.opacity = '1';
             sticker1.style.transform = 'rotate(-12deg) scale(1.05)';
           }
-        }, 150);
+        }, 250);
 
         setTimeout(() => {
           if (sticker2) {
@@ -1317,7 +1323,7 @@ SESSION #15
             badge1.style.opacity = '1';
             badge1.style.transform = 'rotate(-8deg) scale(1.1)';
           }
-        }, 320);
+        }, 650);
 
         setTimeout(() => {
           if (sticker3) {
@@ -1325,7 +1331,7 @@ SESSION #15
             sticker3.style.transform = 'rotate(-4deg) scale(1.02)';
           }
           if (loadingText) loadingText.textContent = "TURNTABLE & PAGES ROLLING...";
-        }, 500);
+        }, 1200);
 
         setTimeout(() => {
           if (sticker4) {
@@ -1336,7 +1342,7 @@ SESSION #15
             badge2.style.opacity = '1';
             badge2.style.transform = 'rotate(6deg) scale(1.05)';
           }
-        }, 650);
+        }, 1750);
 
         const percentages = [
           { val: "00%", width: "5%" },
@@ -1362,12 +1368,18 @@ SESSION #15
                 splashScreen.style.opacity = '0';
                 setTimeout(() => {
                   splashScreen.style.display = 'none';
+                  document.body.style.overflow = '';
+                  const bgmWidget = document.getElementById('bgm-widget');
+                  if (bgmWidget) {
+                    bgmWidget.classList.remove('hidden');
+                    bgmWidget.classList.add('flex');
+                  }
                   isSplashAnimating = false;
                 }, 700);
               }
-            }, 350);
+            }, 450);
           }
-        }, 180);
+        }, 400);
       };
 
       const enterTriggerBtn = document.getElementById('enter-trigger-btn');
