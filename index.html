@@ -16,6 +16,38 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
     rel="stylesheet">
+  <script>
+    // IN-APP BROWSER (Instagram, Telegram, Kakao) AUTO DETECTOR & REDIRECT
+    (function () {
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+      const isInstagram = ua.indexOf('Instagram') > -1;
+      const isTelegram = ua.indexOf('Telegram') > -1 || ua.indexOf('TelegramBot') > -1;
+      const isKakao = ua.indexOf('KAKAOTALK') > -1;
+      const isLine = ua.indexOf('Line') > -1;
+      const isInApp = isInstagram || isTelegram || isKakao || isLine || (ua.indexOf('FBAN') > -1) || (ua.indexOf('FBAV') > -1);
+
+      if (isInApp) {
+        const isAndroid = /Android/i.test(ua);
+        if (isAndroid) {
+          const targetUrl = location.href.replace(/^https?:\/\//, '');
+          location.href = 'intent://' + targetUrl + '#Intent;scheme=https;package=com.android.chrome;end;';
+        } else {
+          window.addEventListener('DOMContentLoaded', () => {
+            const banner = document.createElement('div');
+            banner.className = 'fixed top-0 left-0 right-0 z-[9999] bg-[#bf002e] text-white text-[11px] font-mono-tag p-2.5 text-center flex items-center justify-between border-b-2 border-black hard-shadow-sm';
+            banner.innerHTML = `
+              <div class="flex items-center gap-1.5 font-bold">
+                <span class="material-symbols-outlined text-[16px]">open_in_browser</span>
+                <span>사파리(Safari)로 보시면 훨씬 쾌적합니다! [우측 상단 ⋯ ➔ 브라우저로 열기]</span>
+              </div>
+              <button onclick="this.parentElement.remove()" class="bg-black text-white px-2 py-0.5 rounded-xs font-black text-[10px] cursor-pointer">✕</button>
+            `;
+            document.body.prepend(banner);
+          });
+        }
+      }
+    })();
+  </script>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script
     id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary": "#506600", "surface": "#F4EFEB", "background": "#F4EFEB", "on-background": "#0e0e0e", "on-surface": "#0e0e0e", "primary-container": "#CCFF00", "on-primary-container": "#0e0e0e", "secondary": "#821dda", "secondary-container": "#9c42f4", "tertiary": "#bf002e", "tertiary-container": "#ffe7e6", "surface-container-lowest": "#ffffff", "surface-container-low": "#FAF6F2", "surface-container": "#EFE9E2", "surface-container-high": "#E7DFD6", "surface-container-highest": "#DED3C6" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin-mobile": "1rem", "space-xs": "0.5rem", "space-sm": "0.75rem", "space-md": "1rem", "space-lg": "1.5rem", "space-xl": "2rem", "space-2xs": "0.25rem" }, fontFamily: { "headline-hero": ["Syne", "sans-serif"], "street-marker": ["Permanent Marker", "cursive"], "mono-tag": ["Space Mono", "monospace"], "body-grunge": ["Space Grotesk", "sans-serif"] } } } };</script>
