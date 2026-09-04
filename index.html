@@ -1085,8 +1085,8 @@ SESSION #15
 <!-- BGM AUDIO ELEMENT -->
 <audio id="bgm-audio" src="bgm.mp3" loop preload="auto"></audio>
 
-<!-- FLOATING CIRCULAR BGM CONTROLLER WIDGET (BOTTOM LEFT) -->
-<div class="fixed bottom-20 left-4 sm:absolute sm:bottom-20 sm:left-4 z-[90] flex items-center" id="bgm-widget">
+<!-- FLOATING CIRCULAR BGM CONTROLLER WIDGET (FIXED BOTTOM LEFT) -->
+<div class="fixed bottom-4 left-4 z-[100] flex items-center" id="bgm-widget">
 <button aria-label="BGM 재생 컨트롤" class="w-12 h-12 rounded-full bg-[#CCFF00] text-black border-2 border-black hard-shadow-md flex items-center justify-center relative cursor-pointer active:scale-95 transition-all group" id="bgm-toggle-btn" title="BGM 재생/일시정지" type="button">
 <div class="flex items-end gap-1 h-6" id="bgm-equalizer">
 <span class="w-1 bg-black rounded-full h-1" id="eq-bar-1"></span>
@@ -1401,7 +1401,6 @@ SESSION #15
           if (eqBar2) eqBar2.className = 'w-1 bg-black rounded-full animate-soundwave-2';
           if (eqBar3) eqBar3.className = 'w-1 bg-black rounded-full animate-soundwave-3';
           if (eqBar4) eqBar4.className = 'w-1 bg-black rounded-full animate-soundwave-4';
-          if (bgmToggleBtn) bgmToggleBtn.classList.add('hard-shadow-lime');
         } else {
           if (bgmPlayIcon) bgmPlayIcon.classList.remove('hidden');
           if (bgmEqualizer) bgmEqualizer.classList.add('hidden');
@@ -1409,7 +1408,6 @@ SESSION #15
           if (eqBar2) eqBar2.className = 'w-1 bg-black rounded-full h-1';
           if (eqBar3) eqBar3.className = 'w-1 bg-black rounded-full h-1';
           if (eqBar4) eqBar4.className = 'w-1 bg-black rounded-full h-1';
-          if (bgmToggleBtn) bgmToggleBtn.classList.remove('hard-shadow-lime');
         }
       }
 
