@@ -243,7 +243,7 @@ SYS.STATUS: READY
 </div>
 </div>
 <!-- Hero Live Session Banner -->
-<div class="relative w-full h-36 rounded-lg border-2 border-black overflow-hidden bg-cover bg-center flex flex-col justify-end p-space-sm hard-shadow-md group cursor-pointer" data-alt="Monochromatic risograph-style collage of college students gathered around an open mahogany book table in an old university library, high contrast halftone grain, Y2K retro sticker overlay motifs, warm ambient sepia and lime green paper textures." style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuAdNxMxKeE4GluZoCNuBS6d4Noi7bnFAK9qOvA5WtAke1PeYhR8_jogq-wXYNFq-4-eO38Tg40DsiUEtAe2VLWOf64jrPKgDkZzuOHUCoMaVNUf2JVAu5IcxTHp37s4rO4SSkI8qwCpHHik2cUjfGvbO1O8dNNjX3gYgYKhGmwJm-ecWboHL4Vh8Cl79mcrZrI3STLufOZ1gteKloclhlhVAaRC4-sX3ygypQb9ffokYUAZQ2l9Y378Ag&quot;);">
+<div class="relative w-full h-36 rounded-lg border-2 border-black overflow-hidden bg-cover bg-center flex flex-col justify-end p-space-sm hard-shadow-md group cursor-pointer" id="hero-session-card" data-alt="Monochromatic risograph-style collage of college students gathered around an open mahogany book table in an old university library, high contrast halftone grain, Y2K retro sticker overlay motifs, warm ambient sepia and lime green paper textures." style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuAdNxMxKeE4GluZoCNuBS6d4Noi7bnFAK9qOvA5WtAke1PeYhR8_jogq-wXYNFq-4-eO38Tg40DsiUEtAe2VLWOf64jrPKgDkZzuOHUCoMaVNUf2JVAu5IcxTHp37s4rO4SSkI8qwCpHHik2cUjfGvbO1O8dNNjX3gYgYKhGmwJm-ecWboHL4Vh8Cl79mcrZrI3STLufOZ1gteKloclhlhVAaRC4-sX3ygypQb9ffokYUAZQ2l9Y378Ag&quot;);">
 <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
 <div class="relative z-10 flex items-center justify-between text-white">
 <div>
@@ -938,6 +938,128 @@ SYS.STATUS: READY
 </div>
 </div>
 </div>
+<!-- ENLARGED SCHEDULE / CALENDAR MODAL -->
+<div aria-modal="true" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md transition-opacity duration-200" id="schedule-modal" role="dialog">
+<div class="relative w-full max-w-sm bg-[#FAF6F2] border-[3px] border-black rounded-lg p-4 hard-shadow-lg transform transition-transform scale-95 opacity-0 duration-200 max-h-[90vh] flex flex-col" id="schedule-modal-container">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 w-28 h-5 masking-tape z-20 transform -rotate-1"></div>
+<button class="absolute -top-4 -right-3 bg-[#CCFF00] hover:bg-black hover:text-[#CCFF00] text-black border-2 border-black px-2.5 py-1 rounded-DEFAULT hard-shadow-sm font-mono-tag text-xs font-black flex items-center gap-1 z-30 cursor-pointer active:translate-x-0.5 active:translate-y-0.5" id="schedule-modal-close-btn" type="button">
+<span>✕ CLOSE</span>
+</button>
+<div class="flex flex-col gap-1 border-b-2 border-black pb-3 pt-2">
+<div class="flex items-center justify-between">
+<span class="font-mono-tag text-[10px] font-black bg-[#CCFF00] text-black border border-black px-1.5 py-0.5 rounded-xs uppercase hard-shadow-sm">⚡ 2025 SESSION SCHEDULER</span>
+<span class="font-mono-tag text-[10px] font-bold text-black/60">VOL.02 ISSUE</span>
+</div>
+<h3 class="font-headline-hero text-lg font-black text-black leading-tight mt-1 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[#821dda] text-[22px]">calendar_month</span>
+<span>정기 모임 & 토론 일정표</span>
+</h3>
+<p class="font-body-grunge text-xs font-bold text-black/75">북크크 크루원들의 정기 밑줄 토론 스케줄입니다.</p>
+</div>
+<div class="overflow-y-auto no-scrollbar my-3 flex flex-col gap-3 pr-0.5 max-h-[55vh]">
+<div class="bg-white border-2 border-black p-3 rounded-lg hard-shadow-sm relative transform -rotate-0.5 hover:rotate-0 transition-transform">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-mono-tag text-[10px] font-extrabold bg-[#CCFF00] text-black px-1.5 py-0.5 rounded-xs border border-black flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#bf002e] animate-ping"></span>
+<span>NEXT SESSION #12</span>
+</span>
+<span class="font-mono-tag text-[10px] font-black text-[#bf002e] bg-[#ffe7e6] border border-black px-1.5 py-0.5 rounded-xs">D-3 마감임박</span>
+</div>
+<h4 class="font-headline-hero text-sm font-black text-black leading-snug">제 12회 정기 밑줄 토론: 청춘의 밤</h4>
+<div class="mt-2 flex flex-col gap-1 text-[11px] font-body-grunge font-bold text-black/85 border-t border-black/15 pt-2">
+<div class="flex items-center gap-1.5 text-black">
+<span class="material-symbols-outlined text-[15px] text-[#821dda]">event</span>
+<span>2025.10.24 (금) 20:00 - 23:00</span>
+</div>
+<div class="flex items-center gap-1.5 text-black">
+<span class="material-symbols-outlined text-[15px] text-[#bf002e]">location_on</span>
+<span>홍대 연남 아지트 (LP 아날로그 바)</span>
+</div>
+<div class="flex items-center gap-1.5 text-black/70">
+<span class="material-symbols-outlined text-[15px]">menu_book</span>
+<span>도서: 요시다 슈이치 『사라진 남자』</span>
+</div>
+</div>
+</div>
+<div class="bg-white border-2 border-black p-3 rounded-lg hard-shadow-sm relative transform rotate-0.5 hover:rotate-0 transition-transform">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-mono-tag text-[10px] font-extrabold bg-[#821dda] text-white px-1.5 py-0.5 rounded-xs border border-black">
+SESSION #13
+</span>
+<span class="font-mono-tag text-[10px] font-bold bg-[#CCFF00]/40 text-black border border-black px-1.5 py-0.5 rounded-xs">모집중 (12/20)</span>
+</div>
+<h4 class="font-headline-hero text-sm font-black text-black leading-snug">독립출판 Zine & 서재 갈피 디깅</h4>
+<div class="mt-2 flex flex-col gap-1 text-[11px] font-body-grunge font-bold text-black/85 border-t border-black/15 pt-2">
+<div class="flex items-center gap-1.5 text-black">
+<span class="material-symbols-outlined text-[15px] text-[#821dda]">event</span>
+<span>2025.11.07 (금) 19:30 - 22:00</span>
+</div>
+<div class="flex items-center gap-1.5 text-black">
+<span class="material-symbols-outlined text-[15px] text-[#bf002e]">location_on</span>
+<span>연남동 독립서점 '어쩌다 책방'</span>
+</div>
+<div class="flex items-center gap-1.5 text-black/70">
+<span class="material-symbols-outlined text-[15px]">storefront</span>
+<span>내용: 인디 출판 시집 & 자작 수필집 디깅</span>
+</div>
+</div>
+</div>
+<div class="bg-white border-2 border-black p-3 rounded-lg hard-shadow-sm relative transform -rotate-0.5 hover:rotate-0 transition-transform">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-mono-tag text-[10px] font-extrabold bg-[#FAF6F2] text-black border border-black px-1.5 py-0.5 rounded-xs">
+SESSION #14
+</span>
+<span class="font-mono-tag text-[10px] font-bold text-black/60 bg-black/5 border border-black/30 px-1.5 py-0.5 rounded-xs">오픈예정</span>
+</div>
+<h4 class="font-headline-hero text-sm font-black text-black leading-snug">노을 밑줄 낭독회 & 턴테이블 밤샘</h4>
+<div class="mt-2 flex flex-col gap-1 text-[11px] font-body-grunge font-bold text-black/85 border-t border-black/15 pt-2">
+<div class="flex items-center gap-1.5 text-black">
+<span class="material-symbols-outlined text-[15px] text-[#821dda]">event</span>
+<span>2025.11.21 (금) 20:00 - 24:00</span>
+</div>
+<div class="flex items-center gap-1.5 text-black">
+<span class="material-symbols-outlined text-[15px] text-[#bf002e]">location_on</span>
+<span>학생회관 4F 야외 루프탑</span>
+</div>
+<div class="flex items-center gap-1.5 text-black/70">
+<span class="material-symbols-outlined text-[15px]">album</span>
+<span>도서: 헤르만 헤세 『데미안』 & 바이닐</span>
+</div>
+</div>
+</div>
+<div class="bg-white border-2 border-black p-3 rounded-lg hard-shadow-sm relative transform rotate-0.5 hover:rotate-0 transition-transform">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-mono-tag text-[10px] font-extrabold bg-[#FAF6F2] text-black border border-black px-1.5 py-0.5 rounded-xs">
+SESSION #15
+</span>
+<span class="font-mono-tag text-[10px] font-bold text-black/60 bg-black/5 border border-black/30 px-1.5 py-0.5 rounded-xs">오픈예정</span>
+</div>
+<h4 class="font-headline-hero text-sm font-black text-black leading-snug">시즌 마감 커스텀 북커버 워크샵</h4>
+<div class="mt-2 flex flex-col gap-1 text-[11px] font-body-grunge font-bold text-black/85 border-t border-black/15 pt-2">
+<div class="flex items-center gap-1.5 text-black">
+<span class="material-symbols-outlined text-[15px] text-[#821dda]">event</span>
+<span>2025.12.05 (금) 19:00 - 22:00</span>
+</div>
+<div class="flex items-center gap-1.5 text-black">
+<span class="material-symbols-outlined text-[15px] text-[#bf002e]">location_on</span>
+<span>성수 메이커스 스튜디오 2호점</span>
+</div>
+<div class="flex items-center gap-1.5 text-black/70">
+<span class="material-symbols-outlined text-[15px]">brush</span>
+<span>내용: 실크스크린 & 스텐실 북자켓 제작</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-2 border-t-2 border-black flex items-center justify-between">
+<span class="font-mono-tag text-[10px] text-black/70 font-bold">TOTAL 4 SESSIONS</span>
+<button id="schedule-join-btn" class="px-3.5 py-2 bg-[#CCFF00] hover:bg-black hover:text-[#CCFF00] text-black border-2 border-black font-headline-hero text-xs font-black rounded-DEFAULT hard-shadow-sm flex items-center justify-center gap-1 transition-all active:translate-x-0.5 active:translate-y-0.5 cursor-pointer" type="button">
+<span>세션 신청하기</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
 <script>
     (function() {
       const ctaBtn = document.getElementById('hero-cta-btn');
@@ -1041,6 +1163,65 @@ SYS.STATUS: READY
           setTimeout(() => {
             this.innerHTML = origText;
           }, 1200);
+        });
+      }
+
+      // SCHEDULER MODAL INTERACTION
+      const heroSessionCard = document.getElementById('hero-session-card');
+      const scheduleModal = document.getElementById('schedule-modal');
+      const scheduleModalContainer = document.getElementById('schedule-modal-container');
+      const scheduleCloseBtn = document.getElementById('schedule-modal-close-btn');
+      const scheduleJoinBtn = document.getElementById('schedule-join-btn');
+
+      function openScheduleModal() {
+        if (!scheduleModal || !scheduleModalContainer) return;
+        scheduleModal.classList.remove('hidden');
+        scheduleModal.classList.add('flex');
+        requestAnimationFrame(() => {
+          scheduleModal.classList.remove('opacity-0');
+          scheduleModalContainer.classList.remove('scale-95', 'opacity-0');
+          scheduleModalContainer.classList.add('scale-100', 'opacity-100');
+        });
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeScheduleModal() {
+        if (!scheduleModal || !scheduleModalContainer) return;
+        scheduleModalContainer.classList.remove('scale-100', 'opacity-100');
+        scheduleModalContainer.classList.add('scale-95', 'opacity-0');
+        setTimeout(() => {
+          scheduleModal.classList.add('hidden');
+          scheduleModal.classList.remove('flex');
+          document.body.style.overflow = '';
+        }, 180);
+      }
+
+      if (heroSessionCard) {
+        heroSessionCard.addEventListener('click', openScheduleModal);
+      }
+      if (scheduleCloseBtn) {
+        scheduleCloseBtn.addEventListener('click', closeScheduleModal);
+      }
+      if (scheduleModal) {
+        scheduleModal.addEventListener('click', (e) => {
+          if (e.target === scheduleModal) closeScheduleModal();
+        });
+      }
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && scheduleModal && !scheduleModal.classList.contains('hidden')) {
+          closeScheduleModal();
+        }
+      });
+      if (scheduleJoinBtn) {
+        scheduleJoinBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const origText = this.innerHTML;
+          this.innerHTML = '<span>신청 완료!</span><span class="material-symbols-outlined text-[16px]">check</span>';
+          this.classList.add('bg-[#821dda]', 'text-white');
+          setTimeout(() => {
+            this.innerHTML = origText;
+            this.classList.remove('bg-[#821dda]', 'text-white');
+          }, 1500);
         });
       }
 
