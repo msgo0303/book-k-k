@@ -1,0 +1,957 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><title>북-크-크 아카이브</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;700;800&amp;family=Permanent+Marker&amp;family=Space+Grotesk:wght@500;700;900&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;family=Syne:wght@700;800;900&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary": "#506600", "surface": "#F4EFEB", "background": "#F4EFEB", "on-background": "#0e0e0e", "on-surface": "#0e0e0e", "primary-container": "#CCFF00", "on-primary-container": "#0e0e0e", "secondary": "#821dda", "secondary-container": "#9c42f4", "tertiary": "#bf002e", "tertiary-container": "#ffe7e6", "surface-container-lowest": "#ffffff", "surface-container-low": "#FAF6F2", "surface-container": "#EFE9E2", "surface-container-high": "#E7DFD6", "surface-container-highest": "#DED3C6" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin-mobile": "1rem", "space-xs": "0.5rem", "space-sm": "0.75rem", "space-md": "1rem", "space-lg": "1.5rem", "space-xl": "2rem", "space-2xs": "0.25rem" }, fontFamily: { "headline-hero": ["Syne", "sans-serif"], "street-marker": ["Permanent Marker", "cursive"], "mono-tag": ["Space Mono", "monospace"], "body-grunge": ["Space Grotesk", "sans-serif"] } } } };</script><style>
+    @layer base {
+      html, body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        overscroll-behavior: none;
+        background-color: #F4EFEB;
+        background-image: 
+          radial-gradient(#111111 0.75px, transparent 0.75px),
+          radial-gradient(circle at 10% 20%, rgba(204, 255, 0, 0.08) 0%, transparent 20%),
+          radial-gradient(circle at 90% 80%, rgba(130, 29, 218, 0.08) 0%, transparent 25%);
+        background-size: 14px 14px, 100% 100%, 100% 100%;
+        min-height: max(884px, 100dvh);
+        color: #0e0e0e;
+      }
+      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* 90s Street Neo-brutalism Hard Shadow Utilities */
+    .hard-shadow-sm {
+      box-shadow: 2px 2px 0px #000000;
+    }
+    .hard-shadow-md {
+      box-shadow: 3.5px 3.5px 0px #000000;
+    }
+    .hard-shadow-lg {
+      box-shadow: 5px 5px 0px #000000;
+    }
+    .hard-shadow-lime {
+      box-shadow: 4px 4px 0px #CCFF00, 4px 4px 0px 2px #000000;
+    }
+    .hard-shadow-violet {
+      box-shadow: 4px 4px 0px #821DDA;
+    }
+    .sticker-die-cut {
+      filter: drop-shadow(0 3px 6px rgba(0,0,0,0.22)) drop-shadow(0 1px 2px rgba(0,0,0,0.15));
+    }
+    .graffiti-text-stroke {
+      text-shadow: 3px 3px 0px #000000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000, 1px 1px 0px #000;
+    }
+
+    /* Tape Effect */
+    .masking-tape {
+      background-color: rgba(254, 240, 138, 0.75);
+      backdrop-filter: blur(1px);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+      border-left: 2px dashed rgba(0,0,0,0.25);
+      border-right: 2px dashed rgba(0,0,0,0.25);
+    }
+    .masking-tape-silver {
+      background-color: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(1px);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+      border-left: 2px dashed rgba(0,0,0,0.2);
+      border-right: 2px dashed rgba(0,0,0,0.2);
+    }
+  </style></head><body class="font-body-grunge flex flex-col min-h-screen text-on-surface select-none"><header class="fixed top-0 w-full z-50 pt-safe bg-[#F4EFEB]/90 backdrop-blur-md border-b-2 border-black"><div class="h-16 px-margin-mobile flex items-center justify-between"><div class="flex items-center gap-space-xs"><div class="w-9 h-9 border-2 border-black rounded-DEFAULT bg-[#CCFF00] hard-shadow-sm flex items-center justify-center transform -rotate-2"><span class="material-symbols-outlined text-black font-black text-[20px]">bookmark</span></div><div class="flex flex-col"><div class="flex items-center gap-1"><span class="font-mono-tag font-bold text-xs tracking-wider uppercase bg-black text-[#CCFF00] px-1.5 py-0.5 rounded-xs">BOOK-K-K</span><span class="w-2 h-2 rounded-full bg-[#bf002e] animate-pulse"></span></div><span class="font-mono-tag text-[10px] text-black/70 font-semibold tracking-tighter mt-0.5">ARCHIVE.LOG</span></div></div><div class="flex items-center gap-space-xs"></div></div></header><main class="flex-1 flex flex-col relative w-full pt-20 pb-28 px-margin-mobile"><div class="flex flex-col w-full">
+<!-- MAIN HERO STREET VINTAGE CONTAINER -->
+<section class="relative w-full overflow-visible rounded-xl bg-surface-container-lowest border-[2.5px] border-black p-space-md hard-shadow-lg mb-space-md">
+<!-- Halftone tape accent badge at corner -->
+<!-- Header Badges -->
+<div class="flex items-center justify-between gap-space-xs mb-space-md pt-1">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-DEFAULT border-2 border-black bg-[#CCFF00] text-black hard-shadow-sm transform -rotate-2">
+<span class="material-symbols-outlined text-[15px] font-bold">local_library</span>
+<span class="font-mono-tag text-[11px] font-bold uppercase tracking-wider">VOL.02 ARCHIVE</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-DEFAULT border-2 border-black bg-white hard-shadow-sm transform rotate-1 text-black">
+<span class="font-mono-tag text-[10px] font-bold tracking-tight">SINCE 2025</span>
+<span class="inline-block w-2 h-2 rounded-full bg-[#bf002e]"></span>
+<span class="font-mono-tag text-[10px] font-extrabold uppercase">CAMPUS CLUB</span>
+</div>
+</div>
+<!-- Floating Stickers & Hero Content Area with Characters -->
+<div class="relative py-space-xl flex flex-col items-center justify-center text-center">
+<!-- Die-Cut Character 1: Skater with Book (Left Floating) -->
+<div class="absolute -left-5 -top-6 w-28 h-36 pointer-events-none transform -rotate-12 transition-transform hover:scale-105 overflow-visible z-20" style="filter: drop-shadow(rgba(0, 0, 0, 0.85) 2.5px 3.5px 0px);"><img alt="Skater sticker" class="w-full h-full object-contain filter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgsbC7wh10RMjUa0gYXLoPJUy5jnKpKZdHrlVwPS5mQdvPNc8gXaSl-rGiM1NAdeAMBVcJcxleOgQ6lxtD6R-FdrjOCKM1IY5j7Kv0wRlxDWEifWaJ37SNAZxGYqcDelbNwx3-2cRoDWBU0KOCw7TvZmvaEPfg5CVGTll8PZyDi7L3GSA3ZWMttyS5_9Fq_MZPHXDQIMPG-VkKpIPwn_TvkcjQmJMrc7JELkgY-iP80Fs_JTbdEQnn7-W3dwl3SH1pjMg"></div><div class="absolute -left-5 pointer-events-none transform rotate-2 transition-transform hover:scale-105 overflow-visible z-20" style="top: 130px; width: 140px; filter: drop-shadow(rgba(0, 0, 0, 0.85) 2.5px 3.5px 0px);"><img alt="Street camo cargo girl sticker" class="w-full h-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpLO-nPiWjuP5HZ5zgsijrybLcWQzGxC_eqmjbIQyoxKWUtF0jpU4I9PyPqBcdlQ26hL28doszmubIofhrdEyfDyRLUQuy_TKaB6JRoU2jS-WcaX4jIn68j_Ym9xZ9VAfTv-gu1yli4x7OFDZGoihhfYuU9axDshmABQrwJuQDFMSqsn_PCiNf3zubjEUfSs0oU2VfN4poSzqixNVr5zfQ8505IXWrsVLvAXG2EJjhS6W-Fk3vnuEqd7VsgfXJ_MqbP-M" style="image-rendering: auto;"></div>
+<!-- Die-Cut Character 2: Hip-hop Beanie & Headphones Chill Reading (Right Floating) -->
+<div class="absolute -right-4 -top-6 w-32 h-28 pointer-events-none transform -rotate-3 transition-transform hover:scale-105 overflow-visible z-20" style="filter: drop-shadow(rgba(0, 0, 0, 0.85) 2.5px 3.5px 0px);"><img alt="Girl reading book sticker" class="w-full h-full object-contain filter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDw4I6oXoKDgomoV6-uQo3ESJBwYx_o6GjlyNqLgEQ9zwo-NulDKRWSpcQyKVewNfLPluo5n9P-AnQsDQWyJj5e2OT4hv75riZE3L8xudTcVyWq7BfT1Jx_YuEhJ6g1BZySgyRbgySdaSfbJQ-aUlmGQU-EuW_6ya1aK-DAAJ5xhuUR7fD-f-BpjGYjLQK6k0nhFhbkO_81guWn0YMi0jmt3nruFjBKczf-mxgm2OXg0LmKQXioEl7s3u14Ht6eU1YuV6o"></div><div class="absolute -right-5 bottom-[-10px] w-28 h-40 pointer-events-none transform rotate-6 transition-transform hover:scale-105 overflow-visible z-20" style="filter: drop-shadow(rgba(0, 0, 0, 0.85) 2.5px 3.5px 0px); transform: translateY(75px);"><img alt="Girl with headphones and backpack sticker" class="w-full h-full object-contain filter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmU83o127sRDbf6nAcut8ZSJ9684RpchIB4UHVgNSvsnJSCiAE9A4bKoUIPtsHH-0YPkulqM4IhLyPKW9FE19E_Cr74UvyEEztxOjUEd6I0zYnWzWQRk8kRdtwgSAzpbvSgrMsgxytCVhcbQhEyNeklsk-m64IlvtVOu2BB4Kea5sTg1ncrEwk2apnwyi63WlDbxNH20bN_JYOND1iIqyeBttP51Z2qbqbL1I0jlmBFzUUhlyNZEwNqV4DJZuevBZVNyg" style="image-rendering: crisp-edges;"></div>
+<!-- Floating Badge 1: Top Left Stamped Tag -->
+<div class="absolute top-1 left-20 rotate-[-5deg] z-10">
+<div class="bg-white text-black border-2 border-black px-2 py-0.5 rounded-DEFAULT hard-shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[#bf002e] text-[15px]">grade</span>
+<span class="font-mono-tag text-[10px] font-black tracking-tight">★ VERIFIED #084</span>
+</div>
+</div>
+<!-- Floating Badge 2: Top Right Quote Tag -->
+<div class="absolute -top-2 right-1 rotate-[8deg] z-10">
+<div class="bg-[#821dda] text-white border-2 border-black px-2 py-0.5 rounded-DEFAULT hard-shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[#CCFF00] text-[14px]">bookmark</span>
+<span class="font-mono-tag text-[10px] font-bold">P.128 QUOTE</span>
+</div>
+</div>
+<!-- Main Title: Street Graffiti / Stencil 90s Feel -->
+<div class="relative inline-block my-space-xs mt-3 z-50">
+<h1 class="font-headline-hero text-[46px] leading-tight font-black text-black tracking-tighter uppercase graffiti-text-stroke text-white selection:bg-[#CCFF00]">
+          북 - 크 - 크
+        </h1>
+<div class="absolute -bottom-1 -left-2 -right-2 h-4 bg-[#CCFF00] border-2 border-black -z-10 rounded-sm transform -rotate-1 hard-shadow-sm"></div>
+</div>
+<!-- Subhead: Handwritten / Marker Style Street Tag -->
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-DEFAULT bg-[#ffe7e6] border-2 border-black text-[#bf002e] mb-space-xs hard-shadow-sm transform -rotate-1 z-10 mt-1">
+<span class="font-street-marker text-sm tracking-wide">Find your read</span>
+<span class="material-symbols-outlined text-[16px] text-black font-black">stars</span>
+</div>
+<!-- Subtitle Text -->
+<p class="font-body-grunge text-[13px] font-bold text-black/85 max-w-[270px] mt-space-2xs leading-snug z-10 bg-[#FAF6F2]/90 border border-black/40 px-2.5 py-1 rounded-DEFAULT hard-shadow-sm backdrop-blur-xs">Own your read!</p>
+<!-- Floating Badge 3: Centered Bottom Today's Pick -->
+<div class="absolute -bottom-3 left-1/2 -translate-x-1/2 z-10">
+<div class="bg-white text-black border-2 border-black px-2.5 py-1 rounded-DEFAULT hard-shadow-sm flex items-center gap-1.5 whitespace-nowrap">
+<span class="material-symbols-outlined text-[#506600] text-[15px] font-bold">radio_button_checked</span>
+<div class="flex flex-col text-left">
+<span class="font-mono-tag text-[9px] text-[#bf002e] font-black uppercase leading-none">monthly PICK</span>
+<span class="font-body-grunge text-[11px] font-black text-black leading-tight mt-0.5">엔디 워어 &lt;마션&gt;</span>
+</div>
+</div>
+</div>
+<!-- Floating Badge 4: Bottom Right Notes Count -->
+<div class="absolute -bottom-4 right-1 rotate-[6deg] z-10">
+</div>
+</div>
+<!-- Neo-Brutalism Stat Cards & Live Discussion Card -->
+<div class="mt-space-lg pt-space-md flex flex-col gap-space-sm">
+<!-- 2-Col Stat Boxes -->
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="bg-white border-2 border-black p-space-sm rounded-lg hard-shadow-md flex flex-col justify-between transform -rotate-1 hover:rotate-0 transition-transform">
+<div class="flex items-center justify-between text-black">
+<span class="font-mono-tag text-[11px] font-bold tracking-tight bg-[#FAF6F2] border border-black/40 px-1 rounded-xs">BOOK PASS</span>
+</div>
+<div class="mt-space-xs">
+<span class="font-headline-hero text-2xl font-black text-black">42명</span>
+<p class="font-body-grunge text-xs font-bold text-black/70">현재 참여중인 독서원</p>
+</div>
+</div>
+<div class="bg-white border-2 border-black p-space-sm rounded-lg hard-shadow-md flex flex-col justify-between transform rotate-1 hover:rotate-0 transition-transform">
+<div class="flex items-center justify-between text-black">
+<span class="font-mono-tag text-[11px] font-bold tracking-tight bg-[#FAF6F2] border border-black/40 px-1 rounded-xs">SCRAP RATE</span>
+</div>
+<div class="mt-space-xs">
+<span class="font-headline-hero text-2xl font-black text-[#506600]">89.4%</span>
+<p class="font-body-grunge text-xs font-bold text-black/70">발제문 완독 기록률</p>
+</div>
+</div>
+</div>
+<!-- Hero Live Session Banner -->
+<div class="relative w-full h-36 rounded-lg border-2 border-black overflow-hidden bg-cover bg-center flex flex-col justify-end p-space-sm hard-shadow-md group cursor-pointer" data-alt="Monochromatic risograph-style collage of college students gathered around an open mahogany book table in an old university library, high contrast halftone grain, Y2K retro sticker overlay motifs, warm ambient sepia and lime green paper textures." style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuAdNxMxKeE4GluZoCNuBS6d4Noi7bnFAK9qOvA5WtAke1PeYhR8_jogq-wXYNFq-4-eO38Tg40DsiUEtAe2VLWOf64jrPKgDkZzuOHUCoMaVNUf2JVAu5IcxTHp37s4rO4SSkI8qwCpHHik2cUjfGvbO1O8dNNjX3gYgYKhGmwJm-ecWboHL4Vh8Cl79mcrZrI3STLufOZ1gteKloclhlhVAaRC4-sX3ygypQb9ffokYUAZQ2l9Y378Ag&quot;);">
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+<div class="relative z-10 flex items-center justify-between text-white">
+<div>
+<div class="inline-flex items-center gap-1 bg-[#CCFF00] text-black border border-black px-1.5 py-0.5 rounded-xs mb-1 font-mono-tag text-[10px] font-extrabold tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-[#bf002e] animate-ping"></span>
+<span class="">CURRENT SESSION</span>
+</div>
+<p class="font-headline-hero text-base font-black leading-tight text-white drop-shadow-md">제 12회 정기 밑줄 토론: 청춘의 밤</p>
+</div>
+<div class="w-9 h-9 rounded-full bg-[#CCFF00] border-2 border-black hard-shadow-sm flex items-center justify-center text-black group-hover:translate-x-1 transition-transform">
+<span class="material-symbols-outlined text-[20px] font-black">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Primary CTA Section -->
+<div class="mt-space-lg flex flex-col gap-space-xs">
+<button class="w-full h-14 bg-[#CCFF00] text-black border-[2.5px] border-black rounded-lg flex items-center justify-center gap-space-xs hard-shadow-lg active:translate-x-1 active:translate-y-1 active:shadow-none transition-all cursor-pointer font-headline-hero font-black text-lg tracking-wide uppercase" id="hero-cta-btn" type="button">
+<span class="">북크크 시작하기</span>
+<span class="material-symbols-outlined text-[24px] font-black">arrow_right_alt</span>
+</button>
+<div class="flex items-center justify-center gap-1.5 py-1 text-center">
+<span class="material-symbols-outlined text-[15px] text-[#821dda] font-bold">explore</span>
+<a class="font-mono-tag text-[11px] font-bold text-black/80 underline decoration-black hover:text-black hover:bg-[#CCFF00]/40 px-1 transition-colors" data-path="club-feed" href="#">
+          이번 학기 독서 모임 기록 둘러보기 (Guest)
+        </a>
+</div>
+</div>
+</section>
+<!-- LIVE TICKER SECTION -->
+<section class="w-full bg-[#FAF6F2] border-2 border-black rounded-xl p-space-md hard-shadow-md mb-space-sm">
+<div class="flex items-center justify-between mb-space-sm border-b-2 border-black pb-2">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#821dda] border border-black animate-pulse"></span>
+<h2 class="font-headline-hero text-base font-black tracking-tight text-black">크루원들의 후기 피드</h2>
+</div>
+<span class="font-mono-tag text-[10px] font-black bg-black text-[#CCFF00] px-1.5 py-0.5 rounded-xs uppercase">LIVE TICKER</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- Ticker Item 1 -->
+<div class="bg-white border-2 border-black p-space-xs rounded-lg flex items-center gap-space-xs hard-shadow-sm hover:translate-x-0.5 transition-transform">
+<div class="w-11 h-12 rounded-DEFAULT bg-[#CCFF00] border-2 border-black flex items-center justify-center text-black flex-shrink-0 hard-shadow-sm transform -rotate-2">
+<span class="material-symbols-outlined text-[20px] font-bold">menu_book</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-mono-tag text-[11px] text-black font-extrabold truncate bg-[#FAF6F2] px-1 border border-black/30 rounded-xs">민지 (문헌정보 22)</span>
+<span class="font-mono-tag text-[10px] text-black/60 font-semibold">3분 전</span>
+</div>
+<p class="font-body-grunge text-xs font-bold text-black truncate mt-1">
+            "새는 힘겹게 투쟁하여 알에서 나온다. 알은 세계다."
+          </p>
+</div>
+</div>
+<!-- Ticker Item 2 -->
+<div class="bg-white border-2 border-black p-space-xs rounded-lg flex items-center gap-space-xs hard-shadow-sm hover:translate-x-0.5 transition-transform">
+<div class="w-11 h-12 rounded-DEFAULT bg-[#821dda] border-2 border-black flex items-center justify-center text-white flex-shrink-0 hard-shadow-sm transform rotate-2">
+<span class="material-symbols-outlined text-[20px] font-bold">format_quote</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-mono-tag text-[11px] text-black font-extrabold truncate bg-[#FAF6F2] px-1 border border-black/30 rounded-xs">준혁 (철학 20)</span>
+<span class="font-mono-tag text-[10px] text-black/60 font-semibold">14분 전</span>
+</div>
+<p class="font-body-grunge text-xs font-bold text-black truncate mt-1">
+            3장 발제문: 아프락사스의 현대적 재해석 코멘트 등록
+          </p>
+</div>
+</div>
+<div class="bg-white border-2 border-black p-space-xs rounded-lg flex items-center gap-space-xs hard-shadow-sm hover:translate-x-0.5 transition-transform"><div class="w-11 h-12 rounded-DEFAULT bg-[#bf002e] border-2 border-black flex items-center justify-center text-white flex-shrink-0 hard-shadow-sm transform -rotate-1"><span class="material-symbols-outlined text-[20px] font-bold">edit</span></div><div class="flex-1 min-w-0"><div class="flex items-center justify-between"><span class="font-mono-tag text-[11px] text-black font-extrabold truncate bg-[#FAF6F2] px-1 border border-black/30 rounded-xs">수아 (국문학 23)</span><span class="font-mono-tag text-[10px] text-black/60 font-semibold">28분 전</span></div><p class="font-body-grunge text-xs font-bold text-black truncate mt-1">"우리는 침묵 속에서 비로소 서로의 문장을 읽는다."</p></div></div><div class="bg-white border-2 border-black p-space-xs rounded-lg flex items-center gap-space-xs hard-shadow-sm hover:translate-x-0.5 transition-transform"><div class="w-11 h-12 rounded-DEFAULT bg-[#FAF6F2] border-2 border-black flex items-center justify-center text-black flex-shrink-0 hard-shadow-sm transform rotate-2"><span class="material-symbols-outlined text-[20px] font-bold">how_to_vote</span></div><div class="flex-1 min-w-0"><div class="flex items-center justify-between"><span class="font-mono-tag text-[11px] text-black font-extrabold truncate bg-[#FAF6F2] px-1 border border-black/30 rounded-xs">도현 (사회학 21)</span><span class="font-mono-tag text-[10px] text-black/60 font-semibold">45분 전</span></div><p class="font-body-grunge text-xs font-bold text-black truncate mt-1">『총 균 쇠』 4부 모임 토론 발제문 공유 및 사전 투표 시작</p></div></div><div class="bg-white border-2 border-black p-space-xs rounded-lg flex items-center gap-space-xs hard-shadow-sm hover:translate-x-0.5 transition-transform"><div class="w-11 h-12 rounded-DEFAULT bg-[#CCFF00] border-2 border-black flex items-center justify-center text-black flex-shrink-0 hard-shadow-sm transform -rotate-2"><span class="material-symbols-outlined text-[20px] font-bold">palette</span></div><div class="flex-1 min-w-0"><div class="flex items-center justify-between"><span class="font-mono-tag text-[11px] text-black font-extrabold truncate bg-[#FAF6F2] px-1 border border-black/30 rounded-xs">예린 (시각디자인 24)</span><span class="font-mono-tag text-[10px] text-black/60 font-semibold">1시간 전</span></div><p class="font-body-grunge text-xs font-bold text-black truncate mt-1">서재 갈피 북커버 리디자인 및 아카이브 스크랩 등록</p></div></div></div>
+</section>
+<!-- POLAROID ARCHIVE SECTION -->
+<section class="w-full bg-[#FAF6F2] border-2 border-black rounded-xl p-space-md hard-shadow-md mb-6 relative overflow-hidden">
+<!-- Section Header -->
+<div class="flex flex-col gap-1 mb-4 border-b-2 border-black pb-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-black font-black text-[20px]">photo_camera</span>
+<h2 class="font-headline-hero text-[15px] font-black tracking-tight text-black flex items-center gap-1">
+<span class="">⚡ 캠퍼스 아카이브 스냅</span>
+</h2>
+</div>
+<span class="font-mono-tag text-[10px] font-black bg-[#CCFF00] text-black border border-black px-1.5 py-0.5 rounded-xs uppercase hard-shadow-sm">SNAP &amp; DIG</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-mono-tag text-[10px] font-bold text-black/65">POLAROID ARCHIVE · VOL.02</span>
+<span class="font-mono-tag text-[10px] font-bold text-[#821dda] flex items-center gap-0.5">
+<span class="">넘겨보기</span>
+<span class="material-symbols-outlined text-[14px]">arrow_right_alt</span>
+<span class="text-[9px] text-black/50 ml-0.5">(클릭 시 확대)</span>
+</span>
+</div>
+</div>
+<!-- Horizontal Polaroid Carousel -->
+<div class="overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory -mx-space-md px-space-md py-3 flex gap-4 items-stretch cursor-grab active:cursor-grabbing">
+<!-- Polaroid 1 -->
+<div class="polaroid-card flex-shrink-0 w-[210px] snap-center bg-white border-2 border-black p-2.5 pb-3 rounded-DEFAULT hard-shadow-md cursor-pointer transition-transform hover:-translate-y-1 hover:scale-[1.02] transform -rotate-2 relative group" data-badge-color="#CCFF00" data-badge-text="CLUB PHOTO" data-bg-gradient="from-[#1e1b4b] via-[#311042] to-[#0f172a]" data-caption="새벽 2시, 커피와 함께 이어진 발제문 토론 열기" data-date="2025.04.12 @ 연남 아지트" data-icon="local_cafe" data-id="snap-1" data-tag="NIGHT_READ" data-title="#01 심야 독서 모임 현장">
+<!-- Tape Effect -->
+<div class="absolute -top-2 left-1/2 -translate-x-1/2 w-16 h-4 masking-tape transform -rotate-1 z-10"></div>
+<!-- Photo Placeholder -->
+<div class="w-full aspect-[4/5] rounded-xs border-2 border-black relative overflow-hidden bg-gradient-to-br from-[#1e1b4b] via-[#311042] to-[#0f172a] flex flex-col justify-between p-3 text-white">
+<!-- Film Noise & Grid Overlay -->
+<div class="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:8px_8px]"></div>
+<div class="relative z-10 flex items-center justify-between">
+<span class="font-mono-tag text-[9px] font-extrabold bg-[#CCFF00] text-black px-1.5 py-0.5 rounded-xs border border-black">#01 INSTANT</span>
+<span class="material-symbols-outlined text-[18px] text-[#CCFF00]">local_cafe</span>
+</div>
+<div class="relative z-10 flex flex-col items-center justify-center my-auto text-center gap-1.5">
+<div class="w-10 h-10 rounded-full border border-dashed border-white/60 flex items-center justify-center bg-black/40 backdrop-blur-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white text-[20px]">add_photo_alternate</span>
+</div>
+<span class="font-mono-tag text-[10px] text-white/90 font-bold tracking-tight">[ 사진을 등록해주세요 ]</span>
+<span class="font-body-grunge text-[12px] font-black text-[#CCFF00] drop-shadow-sm">심야 독서 모임 현장</span>
+</div>
+<div class="relative z-10 flex items-center justify-between text-[9px] font-mono-tag text-white/70 border-t border-white/20 pt-1">
+<span class="">ISO 800</span>
+<span class="">EXP. 024</span>
+</div>
+</div>
+<!-- Polaroid Bottom Frame (Chin) -->
+<div class="mt-2.5 px-0.5 flex flex-col">
+<p class="font-street-marker text-[13px] text-black leading-tight truncate transform -rotate-0.5">2025.04.12 @ 연남 아지트</p>
+<div class="flex items-center justify-between mt-1 text-[10px] font-mono-tag text-black/60">
+<span class="font-bold">발제문 열띤 토론 중 🔥</span>
+<span class="material-symbols-outlined text-[14px] text-black/40 group-hover:text-black transition-colors">zoom_in</span>
+</div>
+</div>
+</div>
+<!-- Polaroid 2 -->
+<div class="polaroid-card flex-shrink-0 w-[210px] snap-center bg-white border-2 border-black p-2.5 pb-3 rounded-DEFAULT hard-shadow-md cursor-pointer transition-transform hover:-translate-y-1 hover:scale-[1.02] transform rotate-1.5 relative group" data-badge-color="#821dda" data-badge-text="BOOK TRIP" data-bg-gradient="from-[#064e3b] via-[#134e4a] to-[#022c22]" data-caption="숨겨진 인디 출판 진(Zine)과 90년대 문학선집 발굴" data-date="2025.04.19 @ 독립서점 골목" data-icon="storefront" data-id="snap-2" data-tag="STORE_TOUR" data-title="#02 홍대 인디 북스토어 투어">
+<!-- Tape Effect -->
+<div class="absolute -top-2 left-1/2 -translate-x-1/2 w-16 h-4 masking-tape-silver transform rotate-2 z-10"></div>
+<!-- Photo Placeholder -->
+<div class="w-full aspect-[4/5] rounded-xs border-2 border-black relative overflow-hidden bg-gradient-to-br from-[#064e3b] via-[#134e4a] to-[#022c22] flex flex-col justify-between p-3 text-white">
+<div class="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:8px_8px]"></div>
+<div class="relative z-10 flex items-center justify-between">
+<span class="font-mono-tag text-[9px] font-extrabold bg-[#821dda] text-white px-1.5 py-0.5 rounded-xs border border-black">#02 DIGGING</span>
+<span class="material-symbols-outlined text-[18px] text-[#CCFF00]">storefront</span>
+</div>
+<div class="relative z-10 flex flex-col items-center justify-center my-auto text-center gap-1.5">
+<div class="w-10 h-10 rounded-full border border-dashed border-white/60 flex items-center justify-center bg-black/40 backdrop-blur-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white text-[20px]">add_photo_alternate</span>
+</div>
+<span class="font-mono-tag text-[10px] text-white/90 font-bold tracking-tight">[ DROP PHOTO ]</span>
+<span class="font-body-grunge text-[12px] font-black text-[#CCFF00] drop-shadow-sm">인디 북스토어 투어</span>
+</div>
+<div class="relative z-10 flex items-center justify-between text-[9px] font-mono-tag text-white/70 border-t border-white/20 pt-1">
+<span class="">FILM 400</span>
+<span class="">HONGDAE</span>
+</div>
+</div>
+<!-- Polaroid Bottom Frame (Chin) -->
+<div class="mt-2.5 px-0.5 flex flex-col">
+<p class="font-street-marker text-[13px] text-black leading-tight truncate transform rotate-0.5">Street Coffee &amp; Book club</p>
+<div class="flex items-center justify-between mt-1 text-[10px] font-mono-tag text-black/60">
+<span class="font-bold">2025.04.19 독립출판 📚</span>
+<span class="material-symbols-outlined text-[14px] text-black/40 group-hover:text-black transition-colors">zoom_in</span>
+</div>
+</div>
+</div>
+<!-- Polaroid 3 -->
+<div class="polaroid-card flex-shrink-0 w-[210px] snap-center bg-white border-2 border-black p-2.5 pb-3 rounded-DEFAULT hard-shadow-md cursor-pointer transition-transform hover:-translate-y-1 hover:scale-[1.02] transform -rotate-1 relative group" data-badge-color="#CCFF00" data-badge-text="DEBATE" data-bg-gradient="from-[#7c2d12] via-[#831843] to-[#311042]" data-caption="노을 지는 루프탑에서 철학과 문학 텍스트 자유 낭독" data-date="2025.04.25 @ 학생회관 루프탑" data-icon="wb_twilight" data-id="snap-3" data-tag="ROOFTOP" data-title="#03 옥상 발제 토론 세션">
+<!-- Tape Effect -->
+<div class="absolute -top-2 left-1/2 -translate-x-1/2 w-16 h-4 masking-tape transform -rotate-2 z-10"></div>
+<!-- Photo Placeholder -->
+<div class="w-full aspect-[4/5] rounded-xs border-2 border-black relative overflow-hidden bg-gradient-to-br from-[#7c2d12] via-[#831843] to-[#311042] flex flex-col justify-between p-3 text-white">
+<div class="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:8px_8px]"></div>
+<div class="relative z-10 flex items-center justify-between">
+<span class="font-mono-tag text-[9px] font-extrabold bg-[#CCFF00] text-black px-1.5 py-0.5 rounded-xs border border-black">#03 OPEN-AIR</span>
+<span class="material-symbols-outlined text-[18px] text-[#CCFF00]">wb_twilight</span>
+</div>
+<div class="relative z-10 flex flex-col items-center justify-center my-auto text-center gap-1.5">
+<div class="w-10 h-10 rounded-full border border-dashed border-white/60 flex items-center justify-center bg-black/40 backdrop-blur-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white text-[20px]">add_photo_alternate</span>
+</div>
+<span class="font-mono-tag text-[10px] text-white/90 font-bold tracking-tight">[ 사진을 등록해주세요 ]</span>
+<span class="font-body-grunge text-[12px] font-black text-[#CCFF00] drop-shadow-sm">옥상 발제 토론 세션</span>
+</div>
+<div class="relative z-10 flex items-center justify-between text-[9px] font-mono-tag text-white/70 border-t border-white/20 pt-1">
+<span class="">GOLD 200</span>
+<span class="">CAMPUS#3</span>
+</div>
+</div>
+<!-- Polaroid Bottom Frame (Chin) -->
+<div class="mt-2.5 px-0.5 flex flex-col">
+<p class="font-street-marker text-[13px] text-black leading-tight truncate">노을 밑줄 토론 🌇</p>
+<div class="flex items-center justify-between mt-1 text-[10px] font-mono-tag text-black/60">
+<span class="font-bold">2025.04.25 @ 루프탑</span>
+<span class="material-symbols-outlined text-[14px] text-black/40 group-hover:text-black transition-colors">zoom_in</span>
+</div>
+</div>
+</div>
+<!-- Polaroid 4 -->
+<div class="polaroid-card flex-shrink-0 w-[210px] snap-center bg-white border-2 border-black p-2.5 pb-3 rounded-DEFAULT hard-shadow-md cursor-pointer transition-transform hover:-translate-y-1 hover:scale-[1.02] transform rotate-2 relative group" data-badge-color="#bf002e" data-badge-text="SOUND &amp; READ" data-bg-gradient="from-[#18181b] via-[#27272a] to-[#09090b]" data-caption="바이닐 턴테이블 위로 흘러나오는 재즈와 문장 필사" data-date="2025.05.02 @ LP 바 아날로그" data-icon="album" data-id="snap-4" data-tag="VINYL_VIBE" data-title="#04 활자와 비트 밤샘 디깅">
+<!-- Tape Effect -->
+<div class="absolute -top-2 left-1/2 -translate-x-1/2 w-16 h-4 masking-tape transform rotate-1 z-10"></div>
+<!-- Photo Placeholder -->
+<div class="w-full aspect-[4/5] rounded-xs border-2 border-black relative overflow-hidden bg-gradient-to-br from-[#18181b] via-[#27272a] to-[#09090b] flex flex-col justify-between p-3 text-white">
+<div class="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:8px_8px]"></div>
+<div class="relative z-10 flex items-center justify-between">
+<span class="font-mono-tag text-[9px] font-extrabold bg-[#bf002e] text-white px-1.5 py-0.5 rounded-xs border border-black">#04 VINYL</span>
+<span class="material-symbols-outlined text-[18px] text-[#CCFF00]">album</span>
+</div>
+<div class="relative z-10 flex flex-col items-center justify-center my-auto text-center gap-1.5">
+<div class="w-10 h-10 rounded-full border border-dashed border-white/60 flex items-center justify-center bg-black/40 backdrop-blur-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white text-[20px]">add_photo_alternate</span>
+</div>
+<span class="font-mono-tag text-[10px] text-white/90 font-bold tracking-tight">[ DROP PHOTO ]</span>
+<span class="font-body-grunge text-[12px] font-black text-[#CCFF00] drop-shadow-sm">활자와 비트 밤샘 디깅</span>
+</div>
+<div class="relative z-10 flex items-center justify-between text-[9px] font-mono-tag text-white/70 border-t border-white/20 pt-1">
+<span class="">MONO 3200</span>
+<span class="">ANALOG_LP</span>
+</div>
+</div>
+<!-- Polaroid Bottom Frame (Chin) -->
+<div class="mt-2.5 px-0.5 flex flex-col">
+<p class="font-street-marker text-[13px] text-black leading-tight truncate">비닐 레코드 &amp; 밑줄 긋기</p>
+<div class="flex items-center justify-between mt-1 text-[10px] font-mono-tag text-black/60">
+<span class="font-bold">LP Track + Quote 🎵</span>
+<span class="material-symbols-outlined text-[14px] text-black/40 group-hover:text-black transition-colors">zoom_in</span>
+</div>
+</div>
+</div>
+<!-- Polaroid 5 -->
+<div class="polaroid-card flex-shrink-0 w-[210px] snap-center bg-white border-2 border-black p-2.5 pb-3 rounded-DEFAULT hard-shadow-md cursor-pointer transition-transform hover:-translate-y-1 hover:scale-[1.02] transform -rotate-1.5 relative group" data-badge-color="#CCFF00" data-badge-text="MAKER LAB" data-bg-gradient="from-[#3b0764] via-[#581c87] to-[#1e1b4b]" data-caption="실크스크린과 스텐실 기법으로 나만의 커스텀 북자켓 제작" data-date="2025.05.09 @ 디자인 스튜디오" data-icon="brush" data-id="snap-5" data-tag="WORKSHOP" data-title="#05 시즌 북커버 워크샵">
+<!-- Tape Effect -->
+<div class="absolute -top-2 left-1/2 -translate-x-1/2 w-16 h-4 masking-tape-silver transform -rotate-2 z-10"></div>
+<!-- Photo Placeholder -->
+<div class="w-full aspect-[4/5] rounded-xs border-2 border-black relative overflow-hidden bg-gradient-to-br from-[#3b0764] via-[#581c87] to-[#1e1b4b] flex flex-col justify-between p-3 text-white">
+<div class="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:8px_8px]"></div>
+<div class="relative z-10 flex items-center justify-between">
+<span class="font-mono-tag text-[9px] font-extrabold bg-[#CCFF00] text-black px-1.5 py-0.5 rounded-xs border border-black">#05 CRAFT</span>
+<span class="material-symbols-outlined text-[18px] text-[#CCFF00]">brush</span>
+</div>
+<div class="relative z-10 flex flex-col items-center justify-center my-auto text-center gap-1.5">
+<div class="w-10 h-10 rounded-full border border-dashed border-white/60 flex items-center justify-center bg-black/40 backdrop-blur-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white text-[20px]">add_photo_alternate</span>
+</div>
+<span class="font-mono-tag text-[10px] text-white/90 font-bold tracking-tight">[ 사진을 등록해주세요 ]</span>
+<span class="font-body-grunge text-[12px] font-black text-[#CCFF00] drop-shadow-sm">시즌 북커버 워크샵</span>
+</div>
+<div class="relative z-10 flex items-center justify-between text-[9px] font-mono-tag text-white/70 border-t border-white/20 pt-1">
+<span class="">PORTRA 400</span>
+<span class="">HANDMADE</span>
+</div>
+</div>
+<!-- Polaroid Bottom Frame (Chin) -->
+<div class="mt-2.5 px-0.5 flex flex-col">
+<p class="font-street-marker text-[13px] text-black leading-tight truncate">Archive Snapshot #05</p>
+<div class="flex items-center justify-between mt-1 text-[10px] font-mono-tag text-black/60">
+<span class="font-bold">2025.05.09 북커버 🎨</span>
+<span class="material-symbols-outlined text-[14px] text-black/40 group-hover:text-black transition-colors">zoom_in</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Hint Bar -->
+<div class="mt-2 pt-2 border-t border-black/20 flex items-center justify-between">
+<span class="font-mono-tag text-[10px] text-black/60">TOTAL 5 SNAPSHOTS</span>
+<span class="font-mono-tag text-[10px] font-bold text-black bg-[#CCFF00]/40 px-1.5 py-0.5 rounded-xs border border-black/20">SWIPE HORIZONTALLY ⇄</span>
+</div>
+</section><!-- CREW'S MIXTAPE (인생책 믹스테이프) SECTION -->
+<section class="w-full bg-[#FAF6F2] border-2 border-black rounded-xl p-space-md hard-shadow-md mb-6 relative overflow-hidden">
+<!-- Retro Halftone / Grid Texture Accent -->
+<div class="absolute top-0 right-0 w-32 h-32 opacity-10 pointer-events-none bg-[radial-gradient(#000_1.5px,transparent_1.5px)] [background-size:8px_8px]"></div>
+<!-- Section Header -->
+<div class="flex flex-col gap-1 mb-4 border-b-2 border-black pb-3 relative z-10">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 bg-[#CCFF00] text-black border-2 border-black px-2 py-0.5 rounded-DEFAULT font-mono-tag text-[10px] font-black hard-shadow-sm transform -rotate-1">
+<span class="material-symbols-outlined text-[13px] font-black">album</span>
+<span class="">TRACK 02. DIGGING</span>
+</span>
+<span class="font-mono-tag text-[9px] font-extrabold bg-black text-white px-1.5 py-0.5 rounded-xs tracking-widest uppercase">SIDE-A</span>
+</div>
+<!-- Cassette Tape Sticker / Barcode -->
+<div class="hidden sm:flex items-center gap-1 bg-white border border-black px-1.5 py-0.5 rounded-xs">
+<span class="font-mono-tag text-[9px] font-bold tracking-tighter">||||| ||| |||||</span>
+<span class="font-mono-tag text-[8px] text-black/60 font-semibold">BK-90S</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<div>
+<h2 class="font-headline-hero text-[22px] font-black tracking-tight text-black flex items-center gap-2">
+<span class="">CREW'S MIXTAPE</span>
+<span class="font-street-marker text-xs font-normal text-[#bf002e] transform rotate-[-2deg]">#<span style="font-size: 0.75rem; letter-spacing: -0.025em;" class="">책트랙</span></span>
+</h2>
+<p class="font-street-marker text-[13px] text-black/80 mt-0.5 tracking-wide">
+          크루원들의 인생책&amp;매칭 음악</p>
+</div>
+<span class="font-mono-tag text-[10px] font-bold text-[#821dda] flex items-center gap-0.5">
+<span class="">밀어서 탐색</span>
+<span class="material-symbols-outlined text-[14px]">arrow_right_alt</span>
+</span>
+</div>
+</div>
+<!-- Horizontal Cassette Tape Mixtape Carousel -->
+<div class="overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory -mx-space-md px-space-md py-3 flex gap-4 items-stretch cursor-grab active:cursor-grabbing">
+<!-- Mixtape Card 1 -->
+<div class="flex-shrink-0 w-[270px] snap-center bg-white border-[2.5px] border-black rounded-lg p-3 hard-shadow-md relative flex flex-col justify-between transition-transform hover:-translate-y-1 hover:scale-[1.01]">
+<!-- Scotch Tape Effect Top -->
+<div class="absolute -top-2.5 left-8 w-14 h-4 masking-tape transform -rotate-2 z-20"></div>
+<div class="absolute -top-1.5 right-4 z-20">
+<span class="font-mono-tag text-[9px] font-bold bg-[#821dda] text-white border border-black px-1.5 py-0.5 rounded-xs hard-shadow-sm">@민석's pick</span>
+</div>
+<!-- Cassette Artwork Box -->
+<div class="w-full aspect-[16/10] rounded-xs border-2 border-black relative overflow-hidden bg-gradient-to-br from-[#18181b] via-[#27272a] to-[#09090b] p-2.5 flex flex-col justify-between text-white group cursor-pointer">
+<div class="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:6px_6px]"></div>
+<div class="relative z-10 flex items-center justify-between">
+<span class="font-mono-tag text-[9px] font-black bg-[#CCFF00] text-black border border-black px-1 py-0.2 rounded-xs">TAPE #01</span>
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full border border-white/60 bg-[#CCFF00]/40 animate-pulse"></span>
+<span class="font-mono-tag text-[8px] tracking-wider text-white/70">TYPE I / NORMAL</span>
+</div>
+</div>
+<!-- Center Reel Cutout Graphic Motif -->
+<div class="relative z-10 flex items-center justify-center gap-4 py-1">
+<div class="w-7 h-7 rounded-full border-2 border-white/80 border-dashed flex items-center justify-center bg-black/60">
+<div class="w-2 h-2 rounded-full bg-[#CCFF00]"></div>
+</div>
+<div class="w-12 h-3 bg-white/20 border border-white/40 rounded-xs flex items-center justify-center">
+<span class="font-mono-tag text-[7px] text-[#CCFF00] tracking-widest font-extrabold">STEREO</span>
+</div>
+<div class="w-7 h-7 rounded-full border-2 border-white/80 border-dashed flex items-center justify-center bg-black/60">
+<div class="w-2 h-2 rounded-full bg-[#CCFF00]"></div>
+</div>
+</div>
+<div class="relative z-10 flex items-center justify-between text-[8px] font-mono-tag text-white/60">
+<span class="">READERS ADVISORY</span>
+<span class="">NOISE REDUCTION [ON]</span>
+</div>
+</div>
+<!-- Book Title & Author Info -->
+<div class="mt-3 flex flex-col">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-hero text-sm font-black text-black leading-tight tracking-tight">데미안</h3>
+<span class="font-mono-tag text-[10px] text-black/60 font-bold">헤르만 헤세</span>
+</div>
+<!-- Highlighter Punchline -->
+<div class="mt-2 bg-[#CCFF00] border border-black p-1.5 rounded-xs transform -rotate-0.5 hard-shadow-sm">
+<p class="font-body-grunge text-[11px] font-black text-black leading-snug">
+            "새는 힘겹게 투쟁하여 알에서 나온다. 태어나려는 자는 한 세계를 파괴해야 한다."
+          </p>
+</div>
+</div>
+<!-- Bottom Cassette Audio BGM Controller Bar -->
+<div class="mt-3 pt-2 border-t-2 border-black flex items-center justify-between bg-[#FAF6F2] p-1.5 rounded-DEFAULT border border-black/40">
+<div class="flex items-center gap-1.5 min-w-0 flex-1">
+<span class="material-symbols-outlined text-[18px] text-[#821dda]">cassette</span>
+<div class="flex flex-col min-w-0">
+<span class="font-mono-tag text-[8px] text-black/50 font-bold uppercase leading-none">RECOMMENDED BGM</span>
+<span class="font-mono-tag text-[10px] text-black font-extrabold truncate leading-tight mt-0.5">Lofi Rain &amp; Rhodes Piano</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 flex-shrink-0">
+<span class="font-mono-tag text-[9px] text-black/60 font-semibold">03:42</span>
+<button aria-label="BGM 재생" class="mixtape-play-btn w-7 h-7 rounded-full bg-[#CCFF00] hover:bg-black hover:text-[#CCFF00] text-black border-2 border-black flex items-center justify-center hard-shadow-sm transition-all active:scale-95 cursor-pointer" type="button">
+<span class="material-symbols-outlined text-[16px] font-black leading-none">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Mixtape Card 2 -->
+<div class="flex-shrink-0 w-[270px] snap-center bg-white border-[2.5px] border-black rounded-lg p-3 hard-shadow-md relative flex flex-col justify-between transition-transform hover:-translate-y-1 hover:scale-[1.01]">
+<!-- Scotch Tape Effect Top -->
+<div class="absolute -top-2.5 left-8 w-14 h-4 masking-tape-silver transform rotate-1 z-20"></div>
+<div class="absolute -top-1.5 right-4 z-20">
+<span class="font-mono-tag text-[9px] font-bold bg-[#bf002e] text-white border border-black px-1.5 py-0.5 rounded-xs hard-shadow-sm">@하은's pick</span>
+</div>
+<!-- Cassette Artwork Box -->
+<div class="w-full aspect-[16/10] rounded-xs border-2 border-black relative overflow-hidden bg-gradient-to-br from-[#064e3b] via-[#134e4a] to-[#022c22] p-2.5 flex flex-col justify-between text-white group cursor-pointer">
+<div class="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:6px_6px]"></div>
+<div class="relative z-10 flex items-center justify-between">
+<span class="font-mono-tag text-[9px] font-black bg-[#CCFF00] text-black border border-black px-1 py-0.2 rounded-xs">TAPE #02</span>
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full border border-white/60 bg-[#CCFF00]/40 animate-pulse"></span>
+<span class="font-mono-tag text-[8px] tracking-wider text-white/70">CHROME / CrO2</span>
+</div>
+</div>
+<!-- Center Reel Cutout Graphic Motif -->
+<div class="relative z-10 flex items-center justify-center gap-4 py-1">
+<div class="w-7 h-7 rounded-full border-2 border-white/80 border-dashed flex items-center justify-center bg-black/60">
+<div class="w-2 h-2 rounded-full bg-[#CCFF00]"></div>
+</div>
+<div class="w-12 h-3 bg-white/20 border border-white/40 rounded-xs flex items-center justify-center">
+<span class="font-mono-tag text-[7px] text-[#CCFF00] tracking-widest font-extrabold">BOOM BAP</span>
+</div>
+<div class="w-7 h-7 rounded-full border-2 border-white/80 border-dashed flex items-center justify-center bg-black/60">
+<div class="w-2 h-2 rounded-full bg-[#CCFF00]"></div>
+</div>
+</div>
+<div class="relative z-10 flex items-center justify-between text-[8px] font-mono-tag text-white/60">
+<span class="">EXPLICIT THOUGHTS</span>
+<span class="">HI-FI SOUND</span>
+</div>
+</div>
+<!-- Book Title & Author Info -->
+<div class="mt-3 flex flex-col">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-hero text-sm font-black text-black leading-tight tracking-tight">달과 6펜스</h3>
+<span class="font-mono-tag text-[10px] text-black/60 font-bold">서머싯 몸</span>
+</div>
+<!-- Highlighter Punchline -->
+<div class="mt-2 bg-[#CCFF00] border border-black p-1.5 rounded-xs transform rotate-0.5 hard-shadow-sm">
+<p class="font-body-grunge text-[11px] font-black text-black leading-snug">
+            "나는 그림을 그리지 않고는 못 배기겠소. 물에 빠진 사람에게 수영을 잘하고 못하고는 문제가 아니오."
+          </p>
+</div>
+</div>
+<!-- Bottom Cassette Audio BGM Controller Bar -->
+<div class="mt-3 pt-2 border-t-2 border-black flex items-center justify-between bg-[#FAF6F2] p-1.5 rounded-DEFAULT border border-black/40">
+<div class="flex items-center gap-1.5 min-w-0 flex-1">
+<span class="material-symbols-outlined text-[18px] text-[#506600]">album</span>
+<div class="flex flex-col min-w-0">
+<span class="font-mono-tag text-[8px] text-black/50 font-bold uppercase leading-none">RECOMMENDED BGM</span>
+<span class="font-mono-tag text-[10px] text-black font-extrabold truncate leading-tight mt-0.5">Chet Baker - Chet's Romance</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 flex-shrink-0">
+<span class="font-mono-tag text-[9px] text-black/60 font-semibold">04:18</span>
+<button aria-label="BGM 재생" class="mixtape-play-btn w-7 h-7 rounded-full bg-[#CCFF00] hover:bg-black hover:text-[#CCFF00] text-black border-2 border-black flex items-center justify-center hard-shadow-sm transition-all active:scale-95 cursor-pointer" type="button">
+<span class="material-symbols-outlined text-[16px] font-black leading-none">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Mixtape Card 3 -->
+<div class="flex-shrink-0 w-[270px] snap-center bg-white border-[2.5px] border-black rounded-lg p-3 hard-shadow-md relative flex flex-col justify-between transition-transform hover:-translate-y-1 hover:scale-[1.01]">
+<!-- Scotch Tape Effect Top -->
+<div class="absolute -top-2.5 left-8 w-14 h-4 masking-tape transform -rotate-1 z-20"></div>
+<div class="absolute -top-1.5 right-4 z-20">
+<span class="font-mono-tag text-[9px] font-bold bg-[#506600] text-white border border-black px-1.5 py-0.5 rounded-xs hard-shadow-sm">@도윤's pick</span>
+</div>
+<!-- Cassette Artwork Box -->
+<div class="w-full aspect-[16/10] rounded-xs border-2 border-black relative overflow-hidden bg-gradient-to-br from-[#3b0764] via-[#581c87] to-[#1e1b4b] p-2.5 flex flex-col justify-between text-white group cursor-pointer">
+<div class="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:6px_6px]"></div>
+<div class="relative z-10 flex items-center justify-between">
+<span class="font-mono-tag text-[9px] font-black bg-[#CCFF00] text-black border border-black px-1 py-0.2 rounded-xs">TAPE #03</span>
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full border border-white/60 bg-[#CCFF00]/40 animate-pulse"></span>
+<span class="font-mono-tag text-[8px] tracking-wider text-white/70">METAL / TYPE IV</span>
+</div>
+</div>
+<!-- Center Reel Cutout Graphic Motif -->
+<div class="relative z-10 flex items-center justify-center gap-4 py-1">
+<div class="w-7 h-7 rounded-full border-2 border-white/80 border-dashed flex items-center justify-center bg-black/60">
+<div class="w-2 h-2 rounded-full bg-[#CCFF00]"></div>
+</div>
+<div class="w-12 h-3 bg-white/20 border border-white/40 rounded-xs flex items-center justify-center">
+<span class="font-mono-tag text-[7px] text-[#CCFF00] tracking-widest font-extrabold">AMBIENT</span>
+</div>
+<div class="w-7 h-7 rounded-full border-2 border-white/80 border-dashed flex items-center justify-center bg-black/60">
+<div class="w-2 h-2 rounded-full bg-[#CCFF00]"></div>
+</div>
+</div>
+<div class="relative z-10 flex items-center justify-between text-[8px] font-mono-tag text-white/60">
+<span class="">PUNCTUM ARCHIVE</span>
+<span class="">DOLBY-B</span>
+</div>
+</div>
+<!-- Book Title & Author Info -->
+<div class="mt-3 flex flex-col">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-hero text-sm font-black text-black leading-tight tracking-tight">카메라 루시다</h3>
+<span class="font-mono-tag text-[10px] text-black/60 font-bold">롤랑 바르트</span>
+</div>
+<!-- Highlighter Punchline -->
+<div class="mt-2 bg-[#CCFF00] border border-black p-1.5 rounded-xs transform -rotate-0.5 hard-shadow-sm">
+<p class="font-body-grunge text-[11px] font-black text-black leading-snug">
+            "사진 속에서 나를 찌르고 상처를 주는 그것, 그것을 나는 푼크툼(Punctum)이라 부르고 싶다."
+          </p>
+</div>
+</div>
+<!-- Bottom Cassette Audio BGM Controller Bar -->
+<div class="mt-3 pt-2 border-t-2 border-black flex items-center justify-between bg-[#FAF6F2] p-1.5 rounded-DEFAULT border border-black/40">
+<div class="flex items-center gap-1.5 min-w-0 flex-1">
+<span class="material-symbols-outlined text-[18px] text-[#bf002e]">graphic_eq</span>
+<div class="flex flex-col min-w-0">
+<span class="font-mono-tag text-[8px] text-black/50 font-bold uppercase leading-none">RECOMMENDED BGM</span>
+<span class="font-mono-tag text-[10px] text-black font-extrabold truncate leading-tight mt-0.5">Brian Eno - Music for Airports</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 flex-shrink-0">
+<span class="font-mono-tag text-[9px] text-black/60 font-semibold">05:12</span>
+<button aria-label="BGM 재생" class="mixtape-play-btn w-7 h-7 rounded-full bg-[#CCFF00] hover:bg-black hover:text-[#CCFF00] text-black border-2 border-black flex items-center justify-center hard-shadow-sm transition-all active:scale-95 cursor-pointer" type="button">
+<span class="material-symbols-outlined text-[16px] font-black leading-none">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Section Bottom CTA Action Bar -->
+<div class="mt-3 pt-3 border-t border-black/20 flex flex-col sm:flex-row items-center justify-between gap-2">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-[#506600]"></span>
+<span class="font-mono-tag text-[10px] text-black/70 font-bold">EVERY THURSDAY TRACK UPDATE</span>
+</div>
+<button class="w-full sm:w-auto px-3.5 py-2 rounded-DEFAULT bg-white hover:bg-[#CCFF00] text-black border-2 border-black font-mono-tag text-[11px] font-extrabold hard-shadow-sm flex items-center justify-center gap-1.5 transition-colors cursor-pointer active:translate-x-0.5 active:translate-y-0.5" type="button">
+<span class="">더 많은 크루 믹스테이프 디깅하기</span>
+<span class="material-symbols-outlined text-[16px] font-black">arrow_right_alt</span>
+</button>
+</div>
+</section><!-- FAQ SECTION : SPILL THE TEA -->
+<section class="w-full bg-[#FAF6F2] border-2 border-black rounded-xl p-space-md hard-shadow-md mb-6 relative overflow-hidden">
+<!-- Halftone Grunge Texture Background Overlay -->
+<div class="absolute top-0 right-0 w-36 h-36 opacity-10 pointer-events-none bg-[radial-gradient(#000_1.5px,transparent_1.5px)] [background-size:8px_8px]"></div>
+<!-- Section Header -->
+<div class="flex flex-col gap-1.5 mb-4 border-b-2 border-black pb-3 relative z-10">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<!-- Violet Glow Capsule Badge -->
+<span class="inline-flex items-center gap-1 bg-[#821dda] text-white border-2 border-black px-2 py-0.5 rounded-DEFAULT font-mono-tag text-[10px] font-black hard-shadow-sm transform -rotate-1">
+<span class="material-symbols-outlined text-[13px] text-[#CCFF00]">lock_open</span>
+<span class="">[TRACK 05. NO FILTER]</span>
+</span>
+</div>
+<span class="font-mono-tag text-[9px] font-extrabold bg-[#bf002e] text-white px-2 py-0.5 rounded-xs tracking-wider uppercase border border-black transform rotate-1">HOT Q&amp;A</span>
+</div>
+<div class="mt-1 flex flex-col">
+<div class="flex items-baseline justify-between">
+<h2 class="font-headline-hero text-[22px] font-black tracking-tight text-black flex items-center gap-2">
+<span class="">FAQ : SPILL THE TEA</span>
+<span class="text-[#bf002e] font-street-marker text-xs transform -rotate-3">★</span>
+</h2>
+</div>
+<p class="font-street-marker text-[13px] text-black/80 mt-0.5 tracking-wide flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-[#821dda]">draw</span>
+<span class="">지원 전 가장 많이 물어보는 날것의 질문들</span>
+</p>
+</div>
+</div>
+<!-- Accordion Q&A Cards List -->
+<div class="flex flex-col gap-3 relative z-10">
+<!-- Q1 (Default Open) -->
+<details class="group bg-white border-2 border-black rounded-lg hard-shadow-sm overflow-hidden relative" open="">
+<!-- Masking Tape Sticker Accent -->
+<div class="absolute -top-2 left-6 w-12 h-3.5 masking-tape transform -rotate-2 z-20 pointer-events-none"></div>
+<summary class="cursor-pointer p-3 flex items-center justify-between select-none list-none transition-colors hover:bg-[#CCFF00]/20">
+<div class="flex items-start gap-2 pr-2">
+<span class="font-headline-hero text-[15px] font-black text-black bg-[#CCFF00] border border-black px-1.5 py-0.2 rounded-xs flex-shrink-0 leading-tight mt-0.5">Q1</span>
+<span class="font-headline-hero text-[13px] font-black text-black leading-snug tracking-tight">
+            책을 평소에 많이 안 읽는데 가도 되나요?
+          </span>
+</div>
+<div class="w-6 h-6 rounded-full border border-black bg-[#FAF6F2] group-open:bg-[#CCFF00] flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-open:rotate-45">
+<span class="material-symbols-outlined text-[16px] text-black font-black">add</span>
+</div>
+</summary>
+<div class="px-3 pb-3 pt-1 border-t border-black/20 bg-[#FAF6F2]/80">
+<div class="p-2.5 rounded-DEFAULT bg-white border border-black/30 flex items-start gap-2">
+<span class="font-mono-tag text-[12px] font-black text-[#bf002e] flex-shrink-0">A.</span>
+<p class="font-body-grunge text-[12px] font-bold text-black/90 leading-relaxed">
+            책 표지만 1시간 구경해도 독서입니다. 완독 부담 없이 자기 취향만 들고 오면 됩니다.
+          </p>
+</div>
+</div>
+</details>
+<!-- Q2 -->
+<details class="group bg-white border-2 border-black rounded-lg hard-shadow-sm overflow-hidden relative">
+<div class="absolute -top-2 right-8 w-12 h-3.5 masking-tape-silver transform rotate-1 z-20 pointer-events-none"></div>
+<summary class="cursor-pointer p-3 flex items-center justify-between select-none list-none transition-colors hover:bg-[#CCFF00]/20">
+<div class="flex items-start gap-2 pr-2">
+<span class="font-headline-hero text-[15px] font-black text-black bg-[#CCFF00] border border-black px-1.5 py-0.2 rounded-xs flex-shrink-0 leading-tight mt-0.5">Q2</span>
+<span class="font-headline-hero text-[13px] font-black text-black leading-snug tracking-tight">
+            혼자 지원하면 겉돌지 않을까요?
+          </span>
+</div>
+<div class="w-6 h-6 rounded-full border border-black bg-[#FAF6F2] group-open:bg-[#CCFF00] flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-open:rotate-45">
+<span class="material-symbols-outlined text-[16px] text-black font-black">add</span>
+</div>
+</summary>
+<div class="px-3 pb-3 pt-1 border-t border-black/20 bg-[#FAF6F2]/80">
+<div class="p-2.5 rounded-DEFAULT bg-white border border-black/30 flex items-start gap-2">
+<span class="font-mono-tag text-[12px] font-black text-[#821dda] flex-shrink-0">A.</span>
+<p class="font-body-grunge text-[12px] font-bold text-black/90 leading-relaxed">
+            크루 90%가 혼자 지원했습니다. 첫날 어색함 깨는 웰컴 세션이 준비되어 있으니 몸만 오세요.
+          </p>
+</div>
+</div>
+</details>
+<!-- Q3 -->
+<details class="group bg-white border-2 border-black rounded-lg hard-shadow-sm overflow-hidden relative">
+<div class="absolute -top-2 left-10 w-14 h-3.5 masking-tape transform -rotate-1 z-20 pointer-events-none"></div>
+<summary class="cursor-pointer p-3 flex items-center justify-between select-none list-none transition-colors hover:bg-[#CCFF00]/20">
+<div class="flex items-start gap-2 pr-2">
+<span class="font-headline-hero text-[15px] font-black text-black bg-[#CCFF00] border border-black px-1.5 py-0.2 rounded-xs flex-shrink-0 leading-tight mt-0.5">Q3</span>
+<span class="font-headline-hero text-[13px] font-black text-black leading-snug tracking-tight">
+            활동 시간과 정기 모임은 언제인가요?
+          </span>
+</div>
+<div class="w-6 h-6 rounded-full border border-black bg-[#FAF6F2] group-open:bg-[#CCFF00] flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-open:rotate-45">
+<span class="material-symbols-outlined text-[16px] text-black font-black">add</span>
+</div>
+</summary>
+<div class="px-3 pb-3 pt-1 border-t border-black/20 bg-[#FAF6F2]/80">
+<div class="p-2.5 rounded-DEFAULT bg-white border border-black/30 flex items-start gap-2">
+<span class="font-mono-tag text-[12px] font-black text-[#506600] flex-shrink-0">A.</span>
+<p class="font-body-grunge text-[12px] font-bold text-black/90 leading-relaxed">
+            격주 주말 오프라인 세션 + 평일 자유 번개로 진행됩니다. 시험 기간엔 완벽하게 쉽니다.
+          </p>
+</div>
+</div>
+</details>
+<!-- Q4 -->
+<details class="group bg-white border-2 border-black rounded-lg hard-shadow-sm overflow-hidden relative">
+<div class="absolute -top-2 right-12 w-12 h-3.5 masking-tape-silver transform rotate-2 z-20 pointer-events-none"></div>
+<summary class="cursor-pointer p-3 flex items-center justify-between select-none list-none transition-colors hover:bg-[#CCFF00]/20">
+<div class="flex items-start gap-2 pr-2">
+<span class="font-headline-hero text-[15px] font-black text-black bg-[#CCFF00] border border-black px-1.5 py-0.2 rounded-xs flex-shrink-0 leading-tight mt-0.5">Q4</span>
+<span class="font-headline-hero text-[13px] font-black text-black leading-snug tracking-tight">
+            모임에선 주로 무슨 이야기를 나누나요?
+          </span>
+</div>
+<div class="w-6 h-6 rounded-full border border-black bg-[#FAF6F2] group-open:bg-[#CCFF00] flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-open:rotate-45">
+<span class="material-symbols-outlined text-[16px] text-black font-black">add</span>
+</div>
+</summary>
+<div class="px-3 pb-3 pt-1 border-t border-black/20 bg-[#FAF6F2]/80">
+<div class="p-2.5 rounded-DEFAULT bg-white border border-black/30 flex items-start gap-2">
+<span class="font-mono-tag text-[12px] font-black text-[#bf002e] flex-shrink-0">A.</span>
+<p class="font-body-grunge text-[12px] font-bold text-black/90 leading-relaxed">
+            책 얘기 30% + 요즘 꽂힌 음악, 인생 고민, 헛소리 70%로 꽉 채웁니다.
+          </p>
+</div>
+</div>
+</details>
+</div>
+<!-- Bottom CTA / Lead-in Area -->
+<div class="mt-4 pt-3 border-t-2 border-black flex flex-col sm:flex-row items-center justify-between gap-2.5 relative z-10">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[#821dda] text-[16px] font-bold">chat</span>
+<span class="font-mono-tag text-[11px] text-black/80 font-extrabold">더 궁금한 게 남아있다면?</span>
+</div>
+<a class="w-full sm:w-auto px-4 py-2.5 rounded-DEFAULT bg-[#CCFF00] hover:bg-black hover:text-[#CCFF00] text-black border-2 border-black font-headline-hero text-xs font-black hard-shadow-sm flex items-center justify-center gap-1.5 transition-all cursor-pointer active:translate-x-0.5 active:translate-y-0.5" href="#">
+<span class="">크루에게 직접 물어보기</span>
+<span class="material-symbols-outlined text-[16px] font-black">north_east</span>
+</a>
+</div>
+</section>
+<!-- ENLARGED POLAROID MODAL -->
+<div aria-modal="true" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md transition-opacity duration-200" id="polaroid-modal" role="dialog">
+<div class="relative w-full max-w-sm bg-white border-[3px] border-black rounded-lg p-4 hard-shadow-lg transform transition-transform scale-95 opacity-0 duration-200" id="modal-container">
+<!-- Masking Tape Header on Modal -->
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 w-28 h-5 masking-tape z-20 transform -rotate-1"></div>
+<!-- Close Button Top Right -->
+<button class="absolute -top-4 -right-3 bg-[#CCFF00] hover:bg-white text-black border-2 border-black px-2.5 py-1 rounded-DEFAULT hard-shadow-sm font-mono-tag text-xs font-black flex items-center gap-1 z-30 cursor-pointer active:translate-x-0.5 active:translate-y-0.5" id="modal-close-btn" type="button">
+<span class="">✕ CLOSE</span>
+</button>
+<!-- Modal Polaroid Main Frame -->
+<div class="flex flex-col pt-2">
+<!-- Big Photo Box -->
+<div class="w-full aspect-square rounded-xs border-2 border-black relative overflow-hidden bg-gradient-to-br from-[#1e1b4b] via-[#311042] to-[#0f172a] flex flex-col justify-between p-4 text-white" id="modal-photo-box">
+<div class="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:10px_10px]"></div>
+<div class="relative z-10 flex items-center justify-between">
+<span class="font-mono-tag text-[10px] font-black bg-[#CCFF00] text-black px-2 py-0.5 rounded-xs border border-black" id="modal-tag-pill">#01 INSTANT</span>
+<span class="material-symbols-outlined text-[24px] text-[#CCFF00]" id="modal-icon">local_cafe</span>
+</div>
+<div class="relative z-10 flex flex-col items-center justify-center my-auto text-center gap-2">
+<div class="w-14 h-14 rounded-full border-2 border-dashed border-white/70 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+<span class="material-symbols-outlined text-white text-[28px]">photo_camera</span>
+</div>
+<span class="font-mono-tag text-xs text-white/90 font-bold tracking-tight">[ 사진을 등록해주세요 / DROP PHOTO ]</span>
+<h3 class="font-headline-hero text-lg font-black text-[#CCFF00] drop-shadow-md" id="modal-photo-title">심야 독서 모임 현장</h3>
+</div>
+<div class="relative z-10 flex items-center justify-between text-[10px] font-mono-tag text-white/80 border-t border-white/20 pt-1.5">
+<span class="">INSTANT RETRO FILM</span>
+<span class="">BOOK-K-K ARCHIVE</span>
+</div>
+</div>
+<!-- Modal Bottom Chin: Details & Marker Note -->
+<div class="mt-3.5 flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-mono-tag text-[11px] font-extrabold bg-[#FAF6F2] border border-black px-1.5 py-0.5 rounded-xs text-black" id="modal-date-badge">2025.04.12 @ 연남 아지트</span>
+<span class="font-mono-tag text-[10px] font-bold text-black/60">AUTHENTIC SNAP</span>
+</div>
+<p class="font-street-marker text-base text-black mt-1 leading-snug" id="modal-caption-text">발제문 열띤 토론 중 🔥</p>
+<p class="font-body-grunge text-xs text-black/80 font-bold mt-1 bg-[#FAF6F2] p-2 rounded-xs border border-black/30" id="modal-description-text">
+          새벽 2시, 커피와 함께 이어진 발제문 토론 열기
+        </p>
+</div>
+<!-- Action buttons in modal -->
+<div class="mt-3 pt-2 border-t-2 border-black flex gap-2">
+<button class="flex-1 h-10 bg-[#CCFF00] hover:bg-[#821dda] hover:text-white text-black border-2 border-black font-headline-hero text-xs font-black rounded-DEFAULT hard-shadow-sm flex items-center justify-center gap-1 transition-colors cursor-pointer" type="button">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span class="">스냅 저장하기</span>
+</button>
+<button class="px-3 h-10 bg-white hover:bg-black hover:text-white text-black border-2 border-black font-mono-tag text-xs font-black rounded-DEFAULT hard-shadow-sm flex items-center justify-center gap-1 transition-colors cursor-pointer" id="modal-share-btn" type="button">
+<span class="material-symbols-outlined text-[16px]">share</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+    (function() {
+      const ctaBtn = document.getElementById('hero-cta-btn');
+      if (ctaBtn) {
+        ctaBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          this.classList.add('translate-x-1', 'translate-y-1', 'bg-[#821dda]', 'text-white');
+          setTimeout(() => {
+            this.classList.remove('translate-x-1', 'translate-y-1', 'bg-[#821dda]', 'text-white');
+          }, 250);
+        });
+      }
+
+      // POLAROID MODAL INTERACTION
+      const polaroidCards = document.querySelectorAll('.polaroid-card');
+      const modal = document.getElementById('polaroid-modal');
+      const modalContainer = document.getElementById('modal-container');
+      const closeBtn = document.getElementById('modal-close-btn');
+      const shareBtn = document.getElementById('modal-share-btn');
+
+      const modalPhotoBox = document.getElementById('modal-photo-box');
+      const modalTagPill = document.getElementById('modal-tag-pill');
+      const modalIcon = document.getElementById('modal-icon');
+      const modalPhotoTitle = document.getElementById('modal-photo-title');
+      const modalDateBadge = document.getElementById('modal-date-badge');
+      const modalCaptionText = document.getElementById('modal-caption-text');
+      const modalDescriptionText = document.getElementById('modal-description-text');
+
+      function openModal(card) {
+        const title = card.getAttribute('data-title') || '';
+        const date = card.getAttribute('data-date') || '';
+        const caption = card.getAttribute('data-caption') || '';
+        const tag = card.getAttribute('data-tag') || 'SNAP';
+        const badgeColor = card.getAttribute('data-badge-color') || '#CCFF00';
+        const badgeText = card.getAttribute('data-badge-text') || 'INSTANT';
+        const icon = card.getAttribute('data-icon') || 'photo_camera';
+        const gradientClasses = card.getAttribute('data-bg-gradient') || 'from-neutral-900 via-neutral-800 to-black';
+
+        // Update modal content
+        modalPhotoTitle.textContent = title;
+        modalDateBadge.textContent = date;
+        modalCaptionText.textContent = card.querySelector('.font-street-marker') ? card.querySelector('.font-street-marker').textContent : title;
+        modalDescriptionText.textContent = caption;
+        modalTagPill.textContent = badgeText;
+        modalTagPill.style.backgroundColor = badgeColor;
+        modalTagPill.style.color = (badgeColor === '#821dda' || badgeColor === '#bf002e') ? '#ffffff' : '#000000';
+        modalIcon.textContent = icon;
+
+        // Reset and set gradient
+        modalPhotoBox.className = `w-full aspect-square rounded-xs border-2 border-black relative overflow-hidden bg-gradient-to-br ${gradientClasses} flex flex-col justify-between p-4 text-white`;
+
+        // Show modal
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        
+        requestAnimationFrame(() => {
+          modal.classList.remove('opacity-0');
+          modalContainer.classList.remove('scale-95', 'opacity-0');
+          modalContainer.classList.add('scale-100', 'opacity-100');
+        });
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modalContainer.classList.remove('scale-100', 'opacity-100');
+        modalContainer.classList.add('scale-95', 'opacity-0');
+        setTimeout(() => {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+          document.body.style.overflow = '';
+        }, 180);
+      }
+
+      polaroidCards.forEach(card => {
+        card.addEventListener('click', () => openModal(card));
+      });
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+      }
+
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            closeModal();
+          }
+        });
+      }
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+          closeModal();
+        }
+      });
+
+      if (shareBtn) {
+        shareBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const origText = this.innerHTML;
+          this.innerHTML = '<span class="material-symbols-outlined text-[16px] text-[#506600]">check</span>';
+          setTimeout(() => {
+            this.innerHTML = origText;
+          }, 1200);
+        });
+      }
+    })();
+  </script>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-[#F4EFEB]/95 backdrop-blur-xl border-t-2 border-black shadow-[0_-4px_0px_rgba(0,0,0,0.06)]" data-active-classes="text-black bg-[#CCFF00] border-2 border-black hard-shadow-sm"></nav>
+</body></html>
