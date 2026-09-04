@@ -119,7 +119,7 @@ TAPED_ISSUE_NO.02
 </div>
 </div>
 <div class="mt-4 pt-2">
-<button class="w-full bg-[#CCFF00] hover:bg-black hover:text-[#CCFF00] text-black font-headline-hero font-black text-lg py-3.5 px-4 border-[3px] border-black hard-shadow-md transition-all duration-100 flex items-center justify-center gap-2 group cursor-pointer active:translate-x-1 active:translate-y-1 active:shadow-none" id="enter-trigger-btn" type="button">
+<button class="w-full bg-[#CCFF00] hover:bg-black hover:text-[#CCFF00] text-black font-headline-hero font-black text-lg py-3.5 px-4 border-[3px] border-black hard-shadow-md transition-all duration-100 flex items-center justify-center gap-2 group cursor-pointer active:translate-x-1 active:translate-y-1 active:shadow-none" id="enter-trigger-btn" onclick="startIntroSequence(event)" type="button">
 <span id="enter-btn-label">크루 입장하기 (ENTER)</span>
 <span class="text-xl transition-transform group-hover:translate-x-1" id="enter-btn-arrow">➔</span>
 </button>
@@ -1248,103 +1248,113 @@ SESSION #15
       }
 
       // SPLASH INTRO CONTROLLER
-      const splashScreen = document.getElementById('splash-screen');
-      const enterBtn = document.getElementById('enter-trigger-btn');
-      const enterLabel = document.getElementById('enter-btn-label');
-      const enterArrow = document.getElementById('enter-btn-arrow');
-      const loadingStage = document.getElementById('loading-stage');
-      const counterPercent = document.getElementById('counter-percent');
-      const progressFill = document.getElementById('progress-fill');
-      const loadingText = document.getElementById('loading-text');
-      const stickerLayer = document.getElementById('sticker-blast-layer');
-
-      const sticker1 = document.getElementById('blast-sticker-1');
-      const sticker2 = document.getElementById('blast-sticker-2');
-      const sticker3 = document.getElementById('blast-sticker-3');
-      const sticker4 = document.getElementById('blast-sticker-4');
-      const badge1 = document.getElementById('blast-badge-1');
-      const badge2 = document.getElementById('blast-badge-2');
-
       let isSplashAnimating = false;
 
-      if (enterBtn && splashScreen) {
-        enterBtn.addEventListener('click', function() {
-          if (isSplashAnimating) return;
-          isSplashAnimating = true;
+      window.startIntroSequence = function(e) {
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+        if (isSplashAnimating) return;
+        isSplashAnimating = true;
 
+        const splashScreen = document.getElementById('splash-screen');
+        const enterBtn = document.getElementById('enter-trigger-btn');
+        const enterLabel = document.getElementById('enter-btn-label');
+        const enterArrow = document.getElementById('enter-btn-arrow');
+        const loadingStage = document.getElementById('loading-stage');
+        const counterPercent = document.getElementById('counter-percent');
+        const progressFill = document.getElementById('progress-fill');
+        const loadingText = document.getElementById('loading-text');
+        const stickerLayer = document.getElementById('sticker-blast-layer');
+
+        const sticker1 = document.getElementById('blast-sticker-1');
+        const sticker2 = document.getElementById('blast-sticker-2');
+        const sticker3 = document.getElementById('blast-sticker-3');
+        const sticker4 = document.getElementById('blast-sticker-4');
+        const badge1 = document.getElementById('blast-badge-1');
+        const badge2 = document.getElementById('blast-badge-2');
+
+        if (loadingStage) loadingStage.classList.remove('hidden');
+        if (stickerLayer) stickerLayer.classList.remove('hidden');
+
+        if (enterBtn) {
           enterBtn.style.transform = 'translate(4px, 4px)';
           enterBtn.style.boxShadow = '0px 0px 0px #000000';
-          enterLabel.textContent = "CRACKING ARCHIVE...";
-          enterArrow.textContent = "⚡";
+        }
 
-          loadingStage.classList.remove('hidden');
-          stickerLayer.classList.remove('hidden');
+        setTimeout(() => {
+          if (sticker1) {
+            sticker1.style.opacity = '1';
+            sticker1.style.transform = 'rotate(-12deg) scale(1.05)';
+          }
+        }, 150);
 
-          setTimeout(() => {
-            if (sticker1) {
-              sticker1.style.opacity = '1';
-              sticker1.style.transform = 'rotate(-12deg) scale(1.05)';
-            }
-          }, 150);
+        setTimeout(() => {
+          if (sticker2) {
+            sticker2.style.opacity = '1';
+            sticker2.style.transform = 'rotate(14deg) scale(1)';
+          }
+          if (badge1) {
+            badge1.style.opacity = '1';
+            badge1.style.transform = 'rotate(-8deg) scale(1.1)';
+          }
+        }, 320);
 
-          setTimeout(() => {
-            if (sticker2) {
-              sticker2.style.opacity = '1';
-              sticker2.style.transform = 'rotate(14deg) scale(1)';
-            }
-            if (badge1) {
-              badge1.style.opacity = '1';
-              badge1.style.transform = 'rotate(-8deg) scale(1.1)';
-            }
-          }, 320);
+        setTimeout(() => {
+          if (sticker3) {
+            sticker3.style.opacity = '1';
+            sticker3.style.transform = 'rotate(-4deg) scale(1.02)';
+          }
+          if (loadingText) loadingText.textContent = "TURNTABLE & PAGES ROLLING...";
+        }, 500);
 
-          setTimeout(() => {
-            if (sticker3) {
-              sticker3.style.opacity = '1';
-              sticker3.style.transform = 'rotate(-4deg) scale(1.02)';
-            }
-            if (loadingText) loadingText.textContent = "TURNTABLE & PAGES ROLLING...";
-          }, 500);
+        setTimeout(() => {
+          if (sticker4) {
+            sticker4.style.opacity = '1';
+            sticker4.style.transform = 'rotate(8deg) scale(1)';
+          }
+          if (badge2) {
+            badge2.style.opacity = '1';
+            badge2.style.transform = 'rotate(6deg) scale(1.05)';
+          }
+        }, 650);
 
-          setTimeout(() => {
-            if (sticker4) {
-              sticker4.style.opacity = '1';
-              sticker4.style.transform = 'rotate(8deg) scale(1)';
-            }
-            if (badge2) {
-              badge2.style.opacity = '1';
-              badge2.style.transform = 'rotate(6deg) scale(1.05)';
-            }
-          }, 650);
+        const percentages = [
+          { val: "00%", width: "5%" },
+          { val: "18%", width: "22%" },
+          { val: "42%", width: "45%" },
+          { val: "68%", width: "70%" },
+          { val: "89.4%", width: "90%" },
+          { val: "100% READY!", width: "100%" }
+        ];
 
-          const percentages = [
-            { val: "00%", width: "5%" },
-            { val: "18%", width: "22%" },
-            { val: "42%", width: "45%" },
-            { val: "68%", width: "70%" },
-            { val: "89.4%", width: "90%" },
-            { val: "100% READY!", width: "100%" }
-          ];
-
-          let stepIndex = 0;
-          const countInterval = setInterval(() => {
-            if (stepIndex < percentages.length) {
-              if (counterPercent) counterPercent.textContent = percentages[stepIndex].val;
-              if (progressFill) progressFill.style.width = percentages[stepIndex].width;
-              stepIndex++;
-            } else {
-              clearInterval(countInterval);
-              if (loadingText) loadingText.textContent = "UNLOCKED! SLAMMING IN...";
-              setTimeout(() => {
+        let stepIndex = 0;
+        const countInterval = setInterval(() => {
+          if (stepIndex < percentages.length) {
+            if (counterPercent) counterPercent.textContent = percentages[stepIndex].val;
+            if (progressFill) progressFill.style.width = percentages[stepIndex].width;
+            stepIndex++;
+          } else {
+            clearInterval(countInterval);
+            if (loadingText) loadingText.textContent = "UNLOCKED! SLAMMING IN...";
+            setTimeout(() => {
+              if (splashScreen) {
                 splashScreen.style.transform = 'translateY(-105%)';
                 splashScreen.style.opacity = '0';
                 setTimeout(() => {
                   splashScreen.style.display = 'none';
                   isSplashAnimating = false;
                 }, 700);
-              }, 350);
-          }, 180);
-        });
+              }
+            }, 350);
+          }
+        }, 180);
+      };
+
+      const enterTriggerBtn = document.getElementById('enter-trigger-btn');
+      if (enterTriggerBtn) {
+        enterTriggerBtn.addEventListener('click', window.startIntroSequence);
       }
 
       // BGM AUDIO CONTROLLER
