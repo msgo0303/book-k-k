@@ -237,7 +237,7 @@
     class="relative w-full max-w-[430px] min-h-screen flex flex-col bg-[#F4EFEB] sm:border-x-2 sm:border-black sm:shadow-[0_0_50px_rgba(0,0,0,0.15)]">
     <!-- SPLASH INTRO OVERLAY -->
     <div
-      class="fixed -top-20 -bottom-20 -left-10 -right-10 z-[500] bg-[#F4EFEB] flex flex-col justify-between items-center p-5 pt-24 pb-24 select-none overflow-hidden transition-all duration-700 ease-in-out"
+      class="fixed inset-0 z-[500] bg-[#F4EFEB] flex flex-col justify-between items-center p-5 select-none overflow-hidden transition-all duration-700 ease-in-out"
       id="splash-screen">
       <div class="absolute inset-0 bg-halftone opacity-80 pointer-events-none z-0"></div>
       <div class="relative z-10 w-full max-w-[430px] flex justify-between items-start pt-3">
@@ -341,8 +341,8 @@
         </div>
       </div>
     </div>
-    <header
-      class="w-full max-w-[430px] pt-safe bg-[#F4EFEB] border-b-2 border-black relative z-10">
+    <header id="main-header"
+      class="hidden w-full max-w-[430px] pt-safe bg-[#F4EFEB] border-b-2 border-black relative z-10">
       <div class="h-16 px-margin-mobile flex items-center justify-between">
         <div class="flex items-center gap-space-xs">
           <div
@@ -359,7 +359,7 @@
         <div class="flex items-center gap-space-xs"></div>
       </div>
     </header>
-    <main class="flex-1 flex flex-col relative w-full pt-5 pb-28 px-margin-mobile">
+    <main id="main-content" class="hidden flex-1 flex flex-col relative w-full pt-5 pb-28 px-margin-mobile">
       <div class="flex flex-col w-full">
         <!-- MAIN HERO STREET VINTAGE CONTAINER -->
         <section
@@ -1697,6 +1697,13 @@
                 if (loadingText) loadingText.textContent = "UNLOCKED! SLAMMING IN...";
                 setTimeout(() => {
                   if (splashScreen) {
+                    const mainHeader = document.getElementById('main-header');
+                    const mainContent = document.getElementById('main-content');
+                    const mainNav = document.getElementById('main-nav');
+                    if (mainHeader) mainHeader.classList.remove('hidden');
+                    if (mainContent) mainContent.classList.remove('hidden');
+                    if (mainNav) mainNav.classList.remove('hidden');
+
                     splashScreen.style.transform = 'translateY(-105%)';
                     splashScreen.style.opacity = '0';
                     setTimeout(() => {
@@ -2039,8 +2046,8 @@
         </script>
       </div>
     </main>
-    <nav
-      class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] z-50 pb-safe bg-[#F4EFEB]/95 backdrop-blur-xl border-t-2 border-black shadow-[0_-4px_0px_rgba(0,0,0,0.06)]"
+    <nav id="main-nav"
+      class="hidden fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] z-50 pb-safe bg-[#F4EFEB]/95 backdrop-blur-xl border-t-2 border-black shadow-[0_-4px_0px_rgba(0,0,0,0.06)]"
       data-active-classes="text-black bg-[#CCFF00] border-2 border-black hard-shadow-sm"></nav>
   </div>
 </body>
