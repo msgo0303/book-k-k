@@ -1482,20 +1482,6 @@
                   새벽 2시, 커피와 함께 이어진 발제문 토론 열기
                 </p>
               </div>
-              <!-- Action buttons in modal -->
-              <div class="mt-3 pt-2 border-t-2 border-black flex gap-2">
-                <button
-                  class="flex-1 h-10 bg-[#CCFF00] hover:bg-[#821dda] hover:text-white text-black border-2 border-black font-headline-hero text-xs font-black rounded-DEFAULT hard-shadow-sm flex items-center justify-center gap-1 transition-colors cursor-pointer"
-                  type="button">
-                  <span class="material-symbols-outlined text-[16px]">file_download</span>
-                  <span class="">스냅 저장하기</span>
-                </button>
-                <button
-                  class="px-3 h-10 bg-white hover:bg-black hover:text-white text-black border-2 border-black font-mono-tag text-xs font-black rounded-DEFAULT hard-shadow-sm flex items-center justify-center gap-1 transition-colors cursor-pointer"
-                  id="modal-share-btn" type="button">
-                  <span class="material-symbols-outlined text-[16px]">share</span>
-                </button>
-              </div>
             </div>
           </div>
         </div>
@@ -1818,7 +1804,6 @@
             const modal = document.getElementById('polaroid-modal');
             const modalContainer = document.getElementById('modal-container');
             const closeBtn = document.getElementById('modal-close-btn');
-            const shareBtn = document.getElementById('modal-share-btn');
 
             const modalPhotoBox = document.getElementById('modal-photo-box');
             const modalTagPill = document.getElementById('modal-tag-pill');
@@ -1965,17 +1950,6 @@
                 closeModal();
               }
             });
-
-            if (shareBtn) {
-              shareBtn.addEventListener('click', function (e) {
-                e.stopPropagation();
-                const origText = this.innerHTML;
-                this.innerHTML = '<span class="material-symbols-outlined text-[16px] text-[#506600]">check</span>';
-                setTimeout(() => {
-                  this.innerHTML = origText;
-                }, 1200);
-              });
-            }
 
             // SCHEDULER MODAL INTERACTION
             const heroSessionCard = document.getElementById('hero-session-card');
