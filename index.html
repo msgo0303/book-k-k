@@ -863,6 +863,7 @@
                     class="material-symbols-outlined text-[14px] flex-shrink-0 text-black/40 group-hover:text-black transition-colors">zoom_in</span>
                 </div>
               </div>
+            </div>
             <!-- Polaroid 6 -->
             <div
               class="polaroid-card flex-shrink-0 w-[170px] snap-center bg-white border-2 border-black p-2.5 pb-3 rounded-DEFAULT hard-shadow-md cursor-pointer transition-transform hover:-translate-y-1 hover:scale-[1.02] transform rotate-1 relative group"
@@ -1917,14 +1918,6 @@
                   container.scrollLeft = scrollLeftPos - walk;
                 }
               });
-
-              // PC 마우스 휠로 좌우 스크롤 지원
-              container.addEventListener('wheel', (e) => {
-                if (e.deltaY !== 0) {
-                  e.preventDefault();
-                  container.scrollLeft += e.deltaY;
-                }
-              }, { passive: false });
             });
 
             polaroidCards.forEach(card => {
