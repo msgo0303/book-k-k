@@ -515,12 +515,12 @@
           </div>
           <!-- Primary CTA Section -->
           <div class="mt-space-lg flex flex-col gap-space-xs">
-            <button
-              class="w-full h-14 bg-[#CCFF00] text-black border-[2.5px] border-black rounded-lg flex items-center justify-center gap-space-xs hard-shadow-lg active:translate-x-1 active:translate-y-1 active:shadow-none transition-all cursor-pointer font-headline-hero font-black text-lg tracking-wide uppercase"
-              id="hero-cta-btn" type="button">
+            <a
+              class="w-full h-14 bg-[#CCFF00] hover:bg-black hover:text-[#CCFF00] text-black border-[2.5px] border-black rounded-lg flex items-center justify-center gap-space-xs hard-shadow-lg active:translate-x-1 active:translate-y-1 active:shadow-none transition-all cursor-pointer font-headline-hero font-black text-lg tracking-wide uppercase"
+              id="hero-cta-btn" href="https://smore.im/quiz/OhUmJSMhay" target="_blank" rel="noopener noreferrer">
               <span class="">북크크 시작하기</span>
               <span class="material-symbols-outlined text-[24px] font-black">arrow_right_alt</span>
-            </button>
+            </a>
             <div class="flex items-center justify-center gap-1.5 py-1 text-center">
               <span class="material-symbols-outlined text-[15px] text-[#821dda] font-bold">explore</span>
               <a class="font-mono-tag text-[11px] font-bold text-black/80 underline decoration-black hover:text-black hover:bg-[#CCFF00]/40 px-1 transition-colors"
@@ -1415,7 +1415,7 @@
               <span class="font-mono-tag text-[11px] text-black/80 font-extrabold">더 궁금한 게 남아있다면?</span>
             </div>
             <a class="w-full sm:w-auto px-4 py-2.5 rounded-DEFAULT bg-[#CCFF00] hover:bg-black hover:text-[#CCFF00] text-black border-2 border-black font-headline-hero text-xs font-black hard-shadow-sm flex items-center justify-center gap-1.5 transition-all cursor-pointer active:translate-x-0.5 active:translate-y-0.5"
-              href="#">
+              href="https://open.kakao.com/o/s3PZZ7Li" target="_blank" rel="noopener noreferrer">
               <span class="">크루에게 직접 물어보기</span>
               <span class="material-symbols-outlined text-[16px] font-black">north_east</span>
             </a>
@@ -1627,12 +1627,12 @@
             </div>
             <div class="pt-2 border-t-2 border-black flex items-center justify-between">
               <span class="font-mono-tag text-[10px] text-black/70 font-bold">TOTAL 4 SESSIONS</span>
-              <button id="schedule-join-btn"
+              <a id="schedule-join-btn"
                 class="px-3.5 py-2 bg-[#CCFF00] hover:bg-black hover:text-[#CCFF00] text-black border-2 border-black font-headline-hero text-xs font-black rounded-DEFAULT hard-shadow-sm flex items-center justify-center gap-1 transition-all active:translate-x-0.5 active:translate-y-0.5 cursor-pointer"
-                type="button">
+                href="https://smore.im/quiz/OhUmJSMhay" target="_blank" rel="noopener noreferrer">
                 <span>세션 신청하기</span>
                 <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -1787,17 +1787,6 @@
             const enterTriggerBtn = document.getElementById('enter-trigger-btn');
             if (enterTriggerBtn) {
               enterTriggerBtn.addEventListener('click', window.startIntroSequence);
-            }
-
-            const ctaBtn = document.getElementById('hero-cta-btn');
-            if (ctaBtn) {
-              ctaBtn.addEventListener('click', function (e) {
-                e.preventDefault();
-                this.classList.add('translate-x-1', 'translate-y-1', 'bg-[#821dda]', 'text-white');
-                setTimeout(() => {
-                  this.classList.remove('translate-x-1', 'translate-y-1', 'bg-[#821dda]', 'text-white');
-                }, 250);
-              });
             }
 
             // POLAROID MODAL INTERACTION
@@ -1986,19 +1975,6 @@
                 closeScheduleModal();
               }
             });
-
-            if (scheduleJoinBtn) {
-              scheduleJoinBtn.addEventListener('click', function (e) {
-                e.stopPropagation();
-                const origText = this.innerHTML;
-                this.innerHTML = '<span>신청 완료!</span><span class="material-symbols-outlined text-[16px]">check</span>';
-                this.classList.add('bg-[#821dda]', 'text-white');
-                setTimeout(() => {
-                  this.innerHTML = origText;
-                  this.classList.remove('bg-[#821dda]', 'text-white');
-                }, 1500);
-              });
-            }
 
             // 1. MAIN BGM AUDIO CONTROLLER (bgm.mp3)
             const bgmAudio = document.getElementById('bgm-audio');
