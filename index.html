@@ -1825,8 +1825,66 @@
               }, 180);
             }
 
+            // PC 마우스 드래그 및 마우스 휠 좌우 슬라이드 스크롤 지원
+            const scrollContainers = document.querySelectorAll('.overflow-x-auto');
+            scrollContainers.forEach(container => {
+              let isDown = false;
+              let startX = 0;
+              let scrollLeftPos = 0;
+              let dragged = false;
+
+              container.addEventListener('mousedown', (e) => {
+                isDown = true;
+                dragged = false;
+                container.dataset.isDragging = 'false';
+                startX = e.pageX - container.offsetLeft;
+                scrollLeftPos = container.scrollLeft;
+              });
+
+              container.addEventListener('mouseleave', () => {
+                isDown = false;
+              });
+
+              container.addEventListener('mouseup', () => {
+                isDown = false;
+                if (dragged) {
+                  container.dataset.isDragging = 'true';
+                  setTimeout(() => {
+                    container.dataset.isDragging = 'false';
+                  }, 100);
+                }
+              });
+
+              container.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                const x = e.pageX - container.offsetLeft;
+                const walk = (x - startX) * 1.5;
+                if (Math.abs(x - startX) > 5) {
+                  dragged = true;
+                  container.dataset.isDragging = 'true';
+                  e.preventDefault();
+                  container.scrollLeft = scrollLeftPos - walk;
+                }
+              });
+
+              // PC 마우스 휠로 좌우 스크롤 지원
+              container.addEventListener('wheel', (e) => {
+                if (e.deltaY !== 0) {
+                  e.preventDefault();
+                  container.scrollLeft += e.deltaY;
+                }
+              }, { passive: false });
+            });
+
             polaroidCards.forEach(card => {
-              card.addEventListener('click', () => openModal(card));
+              card.addEventListener('click', (e) => {
+                const parentContainer = card.closest('.overflow-x-auto');
+                if (parentContainer && parentContainer.dataset.isDragging === 'true') {
+                  e.stopImmediatePropagation();
+                  return;
+                }
+                openModal(card);
+              });
             });
 
             if (closeBtn) closeBtn.addEventListener('click', closeModal);
